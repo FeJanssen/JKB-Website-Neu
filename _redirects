@@ -1,0 +1,9 @@
+# Netlify redirects file
+
+# Success page redirect
+/success /success.html 200
+
+# Default redirects
+/contact /index.html#contact 301
+/products /index.html#products 301
+/about /index.html#about 301
