@@ -1,0 +1,200 @@
+/* Why JKB - Apple Minimalist Style */
+.why-jkb {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.why-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.why-title {
+  font-size: 64px;
+  font-weight: 700;
+  color: #f5f5f7;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.why-subtitle {
+  font-size: 28px;
+  color: #a1a1a6;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  padding: 48px 32px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(81, 90, 164, 0.4);
+  border-color: rgba(81, 90, 164, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #515aa4 0%, #6b75b5 100%);
+  border-radius: 14px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-icon svg {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+}
+
+.feature-card h3 {
+  font-size: 21px;
+  font-weight: 600;
+  color: #f5f5f7;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: #a1a1a6;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Stats */
+.why-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 48px;
+  font-weight: 700;
+  color: #6b75b5;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  display: block;
+  font-size: 14px;
+  color: #a1a1a6;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .why-title {
+    font-size: 48px;
+  }
+  
+  .why-subtitle {
+    font-size: 24px;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .why-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-jkb {
+    padding: 80px 0;
+  }
+  
+  .why-wrapper {
+    padding: 0 20px;
+  }
+  
+  .why-header {
+    margin-bottom: 48px;
+  }
+  
+  .why-title {
+    font-size: 36px;
+  }
+  
+  .why-subtitle {
+    font-size: 18px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  
+  .feature-card {
+    padding: 32px 24px;
+  }
+  
+  .why-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding-top: 40px;
+  }
+  
+  .stat-number {
+    font-size: 36px;
+  }
+  
+  .stat-label {
+    font-size: 12px;
+  }
+}

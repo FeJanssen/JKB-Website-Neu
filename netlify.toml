@@ -1,0 +1,30 @@
+# Netlify configuration for JKB Software Website
+
+# Form settings
+[build]
+  publish = "."
+
+# Form notifications - simplified and working configuration
+[[forms]]
+  name = "contact"
+  
+  [[forms.notifications]]
+    type = "email"
+    event = "submission"
+    to = "office@fj-marketing.com"
+    subject = "Neue Kontaktanfrage von JKB Website"
+
+# Redirects
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

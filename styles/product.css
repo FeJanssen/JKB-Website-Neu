@@ -1,0 +1,708 @@
+/* Product Page Specific Styles */
+
+/* Product Hero Section */
+.product-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, var(--bg-light) 0%, rgba(81, 90, 164, 0.05) 100%);
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.product-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.breadcrumb {
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    margin: 0 0.5rem;
+}
+
+.product-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.product-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.product-hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Product Mockup */
+.product-mockup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mockup-screen {
+    width: 400px;
+    height: 300px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+    transition: var(--transition);
+}
+
+.mockup-screen:hover {
+    transform: perspective(1000px) rotateY(-10deg) rotateX(2deg) scale(1.05);
+}
+
+.mockup-header {
+    height: 40px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.mockup-content {
+    padding: 1rem;
+    height: calc(100% - 40px);
+}
+
+/* JKB Grounds Mockup */
+.booking-calendar {
+    height: 100%;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendar-title {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.calendar-nav span {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.time-slot {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.court-booking {
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.court-booking.booked {
+    background-color: var(--primary-color);
+}
+
+.court-booking.available {
+    background-color: var(--bg-gray);
+}
+
+/* JKB Hotels Mockup */
+.hotel-dashboard {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.hotel-name {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.date-info {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-box {
+    background: var(--bg-light);
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: var(--text-gray);
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.3rem;
+}
+
+.room-item {
+    aspect-ratio: 1;
+    background: var(--bg-gray);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.room-item.occupied {
+    background: var(--primary-color);
+    color: white;
+}
+
+.room-item.maintenance {
+    background: #ef4444;
+    color: white;
+}
+
+/* JKB Office Mockup */
+.office-dashboard {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+}
+
+.dashboard-sidebar {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.nav-item {
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    color: var(--text-gray);
+    background: var(--bg-light);
+}
+
+.nav-item.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.3rem;
+}
+
+.widget {
+    background: var(--bg-light);
+    padding: 0.4rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.widget-title {
+    font-size: 0.6rem;
+    color: var(--text-gray);
+    margin-bottom: 0.2rem;
+}
+
+.widget-content {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.calendar-preview {
+    background: var(--bg-light);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.calendar-header {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.2rem;
+}
+
+.day {
+    aspect-ratio: 1;
+    background: white;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+}
+
+.day.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.day.has-event {
+    background: var(--primary-light);
+    color: white;
+}
+
+/* Product Features Section */
+.product-features {
+    padding: 80px 0;
+    background: var(--bg-white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-color);
+    transform: scaleY(0);
+    transition: var(--transition);
+}
+
+.feature-card:hover::before {
+    transform: scaleY(1);
+}
+
+.feature-icon {
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.feature-icon::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.feature-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Product Benefits Section */
+.product-benefits {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.benefits-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.benefit-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.benefit-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.stats-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--bg-light);
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* Product Pricing Section */
+.product-pricing {
+    padding: 80px 0;
+    background: var(--bg-white);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+.pricing-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pricing-card.featured {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.08) translateY(-5px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+.currency {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.period {
+    font-size: 1rem;
+    color: var(--text-gray);
+}
+
+.features-list {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--bg-gray);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.features-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.features-list li:last-child {
+    border-bottom: none;
+}
+
+/* Product CTA Section */
+.product-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn-primary {
+    background: white;
+    color: var(--primary-color);
+}
+
+.cta-buttons .btn-primary:hover {
+    background: var(--bg-light);
+    transform: translateY(-2px);
+}
+
+.cta-buttons .btn-secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.cta-buttons .btn-secondary:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+/* Navigation Logo Link */
+.nav-logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsive Design for Product Pages */
+@media (max-width: 768px) {
+    .product-hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .product-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .benefits-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .mockup-screen {
+        width: 300px;
+        height: 225px;
+        transform: none;
+    }
+
+    .mockup-screen:hover {
+        transform: scale(1.05);
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .pricing-card.featured:hover {
+        transform: translateY(-5px);
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-hero h1 {
+        font-size: 2rem;
+    }
+
+    .product-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .benefit-item {
+        gap: 1rem;
+    }
+
+    .benefit-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .mockup-screen {
+        width: 250px;
+        height: 188px;
+    }
+
+    .pricing-card {
+        padding: 2rem 1.5rem;
+    }
+}

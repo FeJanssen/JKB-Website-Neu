@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternative E-Mail Lösung - JKB Software</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .solution {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #2196f3;
+        }
+        .code {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Kontaktformular Konfiguration für office@fj-marketing.com</h1>
+        
+        <div class="solution">
+            <h2>✅ Aktuell implementierte Lösung: Formspree</h2>
+            <p>Ich habe Ihr Kontaktformular bereits mit <strong>Formspree</strong> konfiguriert - einem kostenlosen und zuverlässigen Service für statische Websites.</p>
+            
+            <h3>🔧 Was bereits eingerichtet ist:</h3>
+            <ul>
+                <li>Formular sendet E-Mails an <strong>office@fj-marketing.com</strong></li>
+                <li>Professionelle Erfolgsbenachrichtigung</li>
+                <li>Loading-Animation beim Senden</li>
+                <li>Automatische Spam-Filterung</li>
+                <li>Mobile-optimiert</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <h3>⚠️ Wichtiger Schritt:</h3>
+            <p>Um das Formular zu aktivieren, müssen Sie sich einmalig bei Formspree registrieren:</p>
+            <ol>
+                <li>Gehen Sie zu <a href="https://formspree.io" target="_blank">formspree.io</a></li>
+                <li>Registrieren Sie sich kostenlos</li>
+                <li>Erstellen Sie ein neues Formular für <strong>office@fj-marketing.com</strong></li>
+                <li>Ersetzen Sie den Platzhalter-Code im Formular mit Ihrem echten Formspree-Endpunkt</li>
+            </ol>
+        </div>
+
+        <h2>🔄 Alternative Lösungen:</h2>
+        
+        <div class="solution">
+            <h3>Option 1: Netlify Forms (empfohlen für GitHub Pages)</h3>
+            <p>Falls Sie Netlify für das Hosting verwenden:</p>
+            <div class="code">
+&lt;form name="contact" method="POST" data-netlify="true"&gt;
+    &lt;input type="hidden" name="form-name" value="contact" /&gt;
+    &lt;!-- Ihre bestehenden Formularfelder --&gt;
+&lt;/form&gt;
+            </div>
+        </div>
+
+        <div class="solution">
+            <h3>Option 2: EmailJS (Client-seitig)</h3>
+            <p>Wenn Sie eine rein JavaScript-basierte Lösung bevorzugen:</p>
+            <div class="code">
+// EmailJS Integration
+emailjs.init("YOUR_USER_ID");
+emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+            </div>
+        </div>
+
+        <div class="solution">
+            <h3>Option 3: Einfacher mailto-Link (Fallback)</h3>
+            <p>Als Backup-Lösung können Sie einen direkten E-Mail-Link verwenden:</p>
+            <div class="code">
+&lt;a href="mailto:office@fj-marketing.com?subject=Kontaktanfrage&amp;body=Hallo,%0D%0A%0D%0ABitte%20hier%20Ihre%20Nachricht%20eingeben..."&gt;
+    E-Mail senden
+&lt;/a&gt;
+            </div>
+        </div>
+
+        <h2>📋 Nächste Schritte:</h2>
+        <ol>
+            <li><strong>Formspree aktivieren:</strong> Registrieren Sie sich bei Formspree und erhalten Sie Ihren Endpunkt</li>
+            <li><strong>Endpunkt ersetzen:</strong> Tauschen Sie den Platzhalter in index.html aus</li>
+            <li><strong>Testen:</strong> Senden Sie eine Test-E-Mail über das Formular</li>
+            <li><strong>E-Mail-Einstellungen:</strong> Überprüfen Sie Spam-Ordner bei ersten E-Mails</li>
+        </ol>
+
+        <div class="warning">
+            <h3>💡 Tipp:</h3>
+            <p>Nach der Formspree-Registrierung erhalten Sie einen Endpunkt wie: <code>https://formspree.io/f/IHRE_FORM_ID</code></p>
+            <p>Ersetzen Sie <code>xyzgkjqw</code> in der index.html mit Ihrer echten Form-ID.</p>
+        </div>
+
+        <h2>🎯 Vorteile der aktuellen Lösung:</h2>
+        <ul>
+            <li>✅ Kostenlos bis 50 E-Mails/Monat</li>
+            <li>✅ Spam-Schutz integriert</li>
+            <li>✅ Funktioniert mit statischen Websites</li>
+            <li>✅ Professionelle E-Mail-Weiterleitung</li>
+            <li>✅ Keine Server-Konfiguration nötig</li>
+        </ul>
+    </div>
+</body>
+</html>
