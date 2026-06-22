@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preise - JKB Grounds</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.featured {
+            border: 3px solid #667eea;
+        }
+        
+        .badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .plan-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .plan-price span {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .plan-features li {
+            padding: 0.8rem 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .plan-features li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .cta-button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #5568d3;
+        }
+        
+        .cta-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 2rem;
+            color: white;
+        }
+        
+        .error-message {
+            background: #ff4444;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎾 Wähle deinen Plan</h1>
+        <p class="subtitle">Starte noch heute mit professioneller Platzverwaltung</p>
+        
+        <div class="pricing-cards">
+            <!-- Starter Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Starter</h3>
+                <div class="plan-price">14,99€ <span>/ Monat</span></div>
+                <ul class="plan-features">
+                    <li>Bis zu 3 Plätze</li>
+                    <li>25 Mitglieder</li>
+                    <li>Online Buchungssystem</li>
+                    <li>E-Mail Support</li>
+                    <li>Mobile App Zugang</li>
+                </ul>
+                <button class="cta-button" onclick="subscribeToPlan('starter')">
+                    Jetzt starten
+                </button>
+            </div>
+            
+            <!-- Professional Plan -->
+            <div class="pricing-card featured">
+                <div class="badge">Beliebt</div>
+                <h3 class="plan-name">Professional</h3>
+                <div class="plan-price">29,99€ <span>/ Monat</span></div>
+                <ul class="plan-features">
+                    <li>Bis zu 10 Plätze</li>
+                    <li>100 Mitglieder</li>
+                    <li>Online Buchungssystem</li>
+                    <li>Priority Support</li>
+                    <li>Mobile App Zugang</li>
+                    <li>Erweiterte Statistiken</li>
+                    <li>API Zugang</li>
+                </ul>
+                <button class="cta-button" onclick="subscribeToPlan('professional')">
+                    Jetzt starten
+                </button>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Enterprise</h3>
+                <div class="plan-price">89,99€ <span>/ Monat</span></div>
+                <ul class="plan-features">
+                    <li>Unbegrenzte Plätze</li>
+                    <li>Unbegrenzte Mitglieder</li>
+                    <li>Online Buchungssystem</li>
+                    <li>24/7 Premium Support</li>
+                    <li>Mobile App Zugang</li>
+                    <li>Erweiterte Statistiken</li>
+                    <li>API Zugang</li>
+                    <li>Custom Branding</li>
+                    <li>Dedizierter Account Manager</li>
+                </ul>
+                <button class="cta-button" onclick="subscribeToPlan('enterprise')">
+                    Jetzt starten
+                </button>
+            </div>
+        </div>
+        
+        <div class="loading">
+            <p>⏳ Weiterleitung zu Stripe...</p>
+        </div>
+        
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <script>
+        // Stripe Publishable Key
+        const stripe = Stripe('pk_test_51TLrf7JvWNSw6abfaRgI5nzRZm9bTqmonEtInDIkcAxqYmqWw8wzw3GbJCvairqkTrGrwStbqY27bLm8DbqlJcZ600k84Q8kqc');
+        
+        // Price IDs
+        const PRICE_IDS = {
+            starter: 'price_1TLry7JvWNSw6abfZtNCxsvZ',           // 14,99€/Monat
+            professional: 'price_1TLrzNJvWNSw6abf5otuJisY',      // 29,99€/Monat
+            enterprise: 'price_1TlFzgJvWNSw6abfO25Fh5cv'         // 89,99€/Monat
+        };
+        
+        async function subscribeToPlan(planType) {
+            // Loading anzeigen
+            document.querySelector('.loading').style.display = 'block';
+            document.querySelectorAll('.cta-button').forEach(btn => btn.disabled = true);
+            
+            try {
+                // Stripe Checkout Session erstellen
+                const { error } = await stripe.redirectToCheckout({
+                    lineItems: [{
+                        price: PRICE_IDS[planType],
+                        quantity: 1,
+                    }],
+                    mode: 'subscription',
+                    successUrl: window.location.origin + '/stripe-success.html?session_id={CHECKOUT_SESSION_ID}',
+                    cancelUrl: window.location.origin + '/pricing.html',
+                });
+                
+                if (error) {
+                    throw new Error(error.message);
+                }
+            } catch (err) {
+                // Fehler anzeigen
+                const errorDiv = document.getElementById('errorMessage');
+                errorDiv.textContent = 'Fehler: ' + err.message;
+                errorDiv.style.display = 'block';
+                
+                // Loading verstecken
+                document.querySelector('.loading').style.display = 'none';
+                document.querySelectorAll('.cta-button').forEach(btn => btn.disabled = false);
+            }
+        }
+    </script>
+</body>
+</html>
