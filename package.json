@@ -1,0 +1,8 @@
+{
+  "name": "jkb-website",
+  "version": "1.0.0",
+  "description": "JKB Software Website with Stripe Integration",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}

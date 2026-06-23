@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/product.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Stripe Integration -->
     <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
@@ -287,54 +286,33 @@
     
     <!-- Stripe Checkout Script -->
     <script>
-        // Stripe Publishable Key
         const stripe = Stripe('pk_test_51TLrf7JvWNSw6abfaRgI5nzRZm9bTqmonEtInDIkcAxqYmqWw8wzw3GbJCvairqkTrGrwStbqY27bLm8DbqlJcZ600k84Q8kqc');
         
-        // Price IDs
         const PRICE_IDS = {
-            starter: 'price_1TLry7JvWNSw6abfZtNCxsvZ',           // 14,99€/Monat
-            professional: 'price_1TLrzNJvWNSw6abf5otuJisY',      // 29,99€/Monat
-            enterprise: 'price_1TlFzgJvWNSw6abfO25Fh5cv'         // 89,99€/Monat
+            starter: 'price_1TLry7JvWNSw6abfZtNCxsvZ',
+            professional: 'price_1TLrzNJvWNSw6abf5otuJisY',
+            enterprise: 'price_1TlFzgJvWNSw6abfO25Fh5cv'
         };
         
         async function subscribeToPlan(planType) {
-            // Button disable
             const buttons = document.querySelectorAll('.btn');
             buttons.forEach(btn => btn.disabled = true);
-            
-            // Button text ändern
             event.target.textContent = '⏳ Wird geladen...';
             
             try {
-                // Base URL bestimmen
-                const baseUrl = window.location.origin.startsWith('http') 
-                    ? window.location.origin 
-                    : 'http://localhost:8000'; // Für lokale Tests
-                
-                // Stripe Checkout Session erstellen
                 const { error } = await stripe.redirectToCheckout({
-                    lineItems: [{
-                        price: PRICE_IDS[planType],
-                        quantity: 1,
-                    }],
+                    lineItems: [{ price: PRICE_IDS[planType], quantity: 1 }],
                     mode: 'subscription',
-                    successUrl: baseUrl + '/stripe-success.html?session_id={CHECKOUT_SESSION_ID}',
-                    cancelUrl: baseUrl + '/products/jkb-grounds.html',
+                    successUrl: window.location.origin + '/stripe-success.html?session_id={CHECKOUT_SESSION_ID}',
+                    cancelUrl: window.location.origin + '/products/jkb-grounds.html',
                 });
                 
-                if (error) {
-                    throw new Error(error.message);
-                }
+                if (error) throw new Error(error.message);
             } catch (err) {
-                // Fehler anzeigen
-                alert('Fehler beim Laden: ' + err.message);
-                
-                // Buttons wieder aktivieren
+                alert('Fehler: ' + err.message);
                 buttons.forEach(btn => {
                     btn.disabled = false;
-                    if (btn.textContent.includes('⏳')) {
-                        btn.textContent = 'Jetzt starten';
-                    }
+                    if (btn.textContent.includes('⏳')) btn.textContent = 'Jetzt starten';
                 });
             }
         }

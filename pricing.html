@@ -225,9 +225,9 @@
         
         // Price IDs
         const PRICE_IDS = {
-            starter: 'price_1TLry7JvWNSw6abfZtNCxsvZ',           // 14,99€/Monat
-            professional: 'price_1TLrzNJvWNSw6abf5otuJisY',      // 29,99€/Monat
-            enterprise: 'price_1TlFzgJvWNSw6abfO25Fh5cv'         // 89,99€/Monat
+            starter: 'price_1TLry7JvWNSw6abfZtNCxsvZ',
+            professional: 'price_1TLrzNJvWNSw6abf5otuJisY',
+            enterprise: 'price_1TlFzgJvWNSw6abfO25Fh5cv'
         };
         
         async function subscribeToPlan(planType) {
@@ -236,7 +236,6 @@
             document.querySelectorAll('.cta-button').forEach(btn => btn.disabled = true);
             
             try {
-                // Stripe Checkout Session erstellen
                 const { error } = await stripe.redirectToCheckout({
                     lineItems: [{
                         price: PRICE_IDS[planType],
@@ -251,12 +250,9 @@
                     throw new Error(error.message);
                 }
             } catch (err) {
-                // Fehler anzeigen
                 const errorDiv = document.getElementById('errorMessage');
                 errorDiv.textContent = 'Fehler: ' + err.message;
                 errorDiv.style.display = 'block';
-                
-                // Loading verstecken
                 document.querySelector('.loading').style.display = 'none';
                 document.querySelectorAll('.cta-button').forEach(btn => btn.disabled = false);
             }
