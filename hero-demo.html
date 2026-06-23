@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Cards Demo - JKB Software</title>
+    <link rel="stylesheet" href="./styles/hero-cards.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .demo-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        
+        .demo-controls button {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 5px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .demo-controls button:hover {
+            transform: scale(1.05);
+        }
+        
+        .demo-info {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 300px;
+            z-index: 1000;
+        }
+        
+        .demo-info h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .demo-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .demo-info li {
+            padding: 5px 0;
+            font-size: 14px;
+        }
+        
+        .demo-info li::before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-info">
+        <h3>🎬 Timed Card Opening</h3>
+        <ul>
+            <li>Cards öffnen nacheinander</li>
+            <li>GSAP Animation</li>
+            <li>Klicken zum Umdrehen</li>
+            <li>Responsive Design</li>
+            <li>Smooth Transitions</li>
+        </ul>
+    </div>
+
+    <section class="hero-cards">
+        <div class="hero-cards-container">
+            <div class="hero-title">
+                <h1>Innovative Softwarelösungen für Ihr Business</h1>
+                <p>Entdecken Sie unsere drei Premium-Produkte</p>
+            </div>
+            <div id="demo" class="cards-wrapper"></div>
+            <div id="slide-numbers" class="slide-indicators"></div>
+        </div>
+    </section>
+
+    <div class="demo-controls">
+        <h4 style="margin-bottom: 10px; color: #333;">Demo Controls</h4>
+        <button onclick="playCardAnimation()">🔄 Animation neu starten</button>
+        <button onclick="flipAllCards()">🔀 Alle Cards umdrehen</button>
+        <button onclick="window.location.href='index.html'">🏠 Zur Website</button>
+    </div>
+
+    <script src="./scripts/hero-cards.js"></script>
+    <script>
+        // Additional demo functions
+        function flipAllCards() {
+            document.querySelectorAll('.card').forEach((card, index) => {
+                setTimeout(() => {
+                    const currentRotation = gsap.getProperty(card, 'rotationY');
+                    const newRotation = currentRotation === 0 ? 180 : 0;
+                    
+                    gsap.to(card, {
+                        rotationY: newRotation,
+                        duration: 0.6,
+                        ease: "power2.inOut"
+                    });
+                }, index * 150);
+            });
+        }
+    </script>
+</body>
+</html>

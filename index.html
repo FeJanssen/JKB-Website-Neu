@@ -6,51 +6,91 @@
     <title>JKB Software - Innovative Softwarelösungen</title>
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/animations.css">
+    <link rel="stylesheet" href="./styles/hero-cards.css">
+    <link rel="stylesheet" href="./styles/why-jkb.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- GSAP Library for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>JKB Software</h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#products" class="nav-link">Produkte</a></li>
-                <li><a href="#about" class="nav-link">Über uns</a></li>
-                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+    <!-- Transparent Navigation -->
+    <nav class="transparent-navbar">
+        <div class="transparent-nav-container">
+            <div class="nav-brand">JKB</div>
+            <ul class="nav-links">
+                <li><a href="#products">Produkte</a></li>
+                <li><a href="/pricing.html">Preise</a></li>
+                <li><a href="#why">Warum JKB</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Innovative Softwarelösungen für Ihr Unternehmen</h1>
-                <p class="hero-subtitle">Wir entwickeln maßgeschneiderte Software, die Ihre Geschäftsprozesse optimiert und Ihren Erfolg vorantreibt.</p>
-                <div class="hero-buttons">
-                    <a href="#products" class="btn btn-primary">Unsere Produkte</a>
-                    <a href="#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
-                </div>
+    <div class="indicator"></div>
+
+    <!-- Hero Section with Timed Card Opening -->
+    <section id="home" class="hero-cards">
+        <div id="demo"></div>
+
+        <div class="details" id="details-even">
+            <div class="place-box">
+                <div class="text">Buchungssoftware</div>
             </div>
-            <div class="hero-visual">
-                <div class="hero-card">
-                    <div class="card-header"></div>
-                    <div class="card-content">
-                        <div class="card-line"></div>
-                        <div class="card-line short"></div>
-                        <div class="card-line"></div>
-                    </div>
-                </div>
+            <div class="title-box-1"><div class="title-1">JKB</div></div>
+            <div class="title-box-2"><div class="title-2">GROUNDS</div></div>
+            <div class="desc">
+                Die perfekte Buchungssoftware für Tennisplätze und Tischreservierungen in der Gastronomie. Verwalten Sie Ihre Ressourcen effizient und steigern Sie Ihren Umsatz.
+            </div>
+            <div class="cta">
+                <button class="bookmark">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <button class="discover" onclick="window.location.href='./products/jkb-grounds.html'">Entdecken</button>
             </div>
         </div>
+
+        <div class="details" id="details-odd">
+            <div class="place-box">
+                <div class="text">Buchungssoftware</div>
+            </div>
+            <div class="title-box-1"><div class="title-1">JKB</div></div>
+            <div class="title-box-2"><div class="title-2">GROUNDS</div></div>
+            <div class="desc">
+                Die perfekte Buchungssoftware für Tennisplätze und Tischreservierungen in der Gastronomie. Verwalten Sie Ihre Ressourcen effizient und steigern Sie Ihren Umsatz.
+            </div>
+            <div class="cta">
+                <button class="bookmark">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+                <button class="discover" onclick="window.location.href='./products/jkb-grounds.html'">Entdecken</button>
+            </div>
+        </div>
+
+        <div class="pagination" id="pagination">
+            <div class="arrow arrow-left" onclick="clicks++; step();">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+                </svg>
+            </div>
+            <div class="arrow arrow-right" onclick="clicks++; step();">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                </svg>
+            </div>
+            <div class="progress-sub-container">
+                <div class="progress-sub-background">
+                    <div class="progress-sub-foreground"></div>
+                </div>
+            </div>
+            <div class="slide-numbers" id="slide-numbers"></div>
+        </div>
+
+        <div class="cover"></div>
     </section>
 
     <!-- Products Section -->
@@ -112,94 +152,97 @@
         </div>
     </section>
 
-    <!-- Why Our Software Helps Section -->
-    <section class="why-software-helps">
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        
-        <div class="why-container">
-            <div class="section-intro">
-                <h2>Warum unsere Software hilft</h2>
-                <p>Entdecken Sie, wie unsere innovativen Lösungen Ihr Unternehmen transformieren und nachhaltigen Erfolg schaffen.</p>
+    <!-- Why JKB - Apple Style -->
+    <section id="why" class="why-jkb">
+        <div class="why-wrapper">
+            <div class="why-header">
+                <h2 class="why-title">Warum JKB.</h2>
+                <p class="why-subtitle">Einfach. Effizient. Erfolgreich.</p>
             </div>
-            
-            <div class="benefits-showcase">
-                <div class="benefit-item">
-                    <div class="benefit-content">
-                        <div class="benefit-number">01</div>
-                        <h3 class="benefit-title">Effizienz steigern</h3>
-                        <p class="benefit-description">Automatisieren Sie wiederkehrende Aufgaben und optimieren Sie Ihre Arbeitsabläufe. Unsere Software reduziert manuelle Arbeit um bis zu 70% und spart wertvolle Zeit.</p>
-                        <div class="benefit-stats">
-                            <div class="stat">
-                                <span class="stat-number">70%</span>
-                                <span class="stat-label">Zeitersparnis</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">95%</span>
-                                <span class="stat-label">Weniger Fehler</span>
-                            </div>
-                        </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
                     </div>
-                    <div class="benefit-visual">
-                        <div class="visual-element">
-                            <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12,6 12,12 16,14"/>
-                            </svg>
-                        </div>
-                    </div>
+                    <h3>Blitzschnell</h3>
+                    <p>70% schnellere Prozesse durch intelligente Automatisierung</p>
                 </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-content">
-                        <div class="benefit-number">02</div>
-                        <h3 class="benefit-title">Kosten reduzieren</h3>
-                        <p class="benefit-description">Minimieren Sie operative Kosten durch intelligente Ressourcenverwaltung und automatisierte Prozesse. Unsere Kunden sparen durchschnittlich 40% ihrer IT-Kosten.</p>
-                        <div class="benefit-stats">
-                            <div class="stat">
-                                <span class="stat-number">40%</span>
-                                <span class="stat-label">Kosteneinsparung</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">3x</span>
-                                <span class="stat-label">ROI Steigerung</span>
-                            </div>
-                        </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
                     </div>
-                    <div class="benefit-visual">
-                        <div class="visual-element">
-                            <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="12" y1="1" x2="12" y2="23"/>
-                                <path d="m17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                            </svg>
-                        </div>
-                    </div>
+                    <h3>Zeitsparend</h3>
+                    <p>Automatisieren Sie wiederkehrende Aufgaben mühelos</p>
                 </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-content">
-                        <div class="benefit-number">03</div>
-                        <h3 class="benefit-title">Wachstum ermöglichen</h3>
-                        <p class="benefit-description">Skalierbare Lösungen, die mit Ihrem Unternehmen wachsen. Unsere Software passt sich flexibel an neue Anforderungen an und unterstützt nachhaltiges Wachstum.</p>
-                        <div class="benefit-stats">
-                            <div class="stat">
-                                <span class="stat-number">300%</span>
-                                <span class="stat-label">Skalierbarkeit</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">24/7</span>
-                                <span class="stat-label">Verfügbarkeit</span>
-                            </div>
-                        </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
                     </div>
-                    <div class="benefit-visual">
-                        <div class="visual-element">
-                            <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-                            </svg>
-                        </div>
+                    <h3>Skalierbar</h3>
+                    <p>Wächst mit Ihrem Unternehmen – ohne Kompromisse</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
                     </div>
+                    <h3>Zuverlässig</h3>
+                    <p>99.9% Uptime für maximale Verfügbarkeit</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Intuitiv</h3>
+                    <p>Keine Schulung nötig – sofort einsatzbereit</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                        </svg>
+                    </div>
+                    <h3>Sicher</h3>
+                    <p>Bank-Level Verschlüsselung für Ihre Daten</p>
+                </div>
+            </div>
+
+            <div class="why-stats">
+                <div class="stat-item">
+                    <span class="stat-number">70%</span>
+                    <span class="stat-label">Zeitersparnis</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">40%</span>
+                    <span class="stat-label">Kostensenkung</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Verfügbarkeit</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Zufriedene Kunden</span>
                 </div>
             </div>
         </div>
@@ -351,6 +394,7 @@
         <textarea name="message"></textarea>
     </form>
 
+    <script src="./scripts/hero-cards.js"></script>
     <script src="./scripts/main.js"></script>
 </body>
 </html>

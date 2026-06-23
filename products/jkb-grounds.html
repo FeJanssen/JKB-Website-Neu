@@ -181,50 +181,56 @@
                     <h3>Starter</h3>
                     <div class="price">
                         <span class="currency">€</span>
-                        <span class="amount">49</span>
+                        <span class="amount">14,99</span>
                         <span class="period">/Monat</span>
                     </div>
                     <ul class="features-list">
-                        <li>Bis zu 3 Courts/Tische</li>
-                        <li>100 Buchungen/Monat</li>
-                        <li>Basis Kundenverwaltung</li>
+                        <li>Bis zu 3 Plätze</li>
+                        <li>25 Mitglieder</li>
+                        <li>Online Buchungssystem</li>
                         <li>E-Mail Support</li>
+                        <li>Mobile App Zugang</li>
                     </ul>
-                    <a href="#demo" class="btn btn-secondary">Jetzt testen</a>
+                    <button class="btn btn-secondary" onclick="subscribeToPlan('starter')">Jetzt starten</button>
                 </div>
                 <div class="pricing-card featured">
                     <div class="popular-badge">Beliebt</div>
                     <h3>Professional</h3>
                     <div class="price">
                         <span class="currency">€</span>
-                        <span class="amount">99</span>
+                        <span class="amount">29,99</span>
                         <span class="period">/Monat</span>
                     </div>
                     <ul class="features-list">
-                        <li>Unbegrenzte Courts/Tische</li>
-                        <li>Unbegrenzte Buchungen</li>
-                        <li>Erweiterte Kundenverwaltung</li>
-                        <li>SMS Benachrichtigungen</li>
-                        <li>Reporting & Analytics</li>
-                        <li>Priorität Support</li>
+                        <li>Bis zu 10 Plätze</li>
+                        <li>100 Mitglieder</li>
+                        <li>Online Buchungssystem</li>
+                        <li>Priority Support</li>
+                        <li>Mobile App Zugang</li>
+                        <li>Erweiterte Statistiken</li>
+                        <li>API Zugang</li>
                     </ul>
-                    <a href="#demo" class="btn btn-primary">Jetzt starten</a>
+                    <button class="btn btn-primary" onclick="subscribeToPlan('professional')">Jetzt starten</button>
                 </div>
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
                     <div class="price">
                         <span class="currency">€</span>
-                        <span class="amount">199</span>
+                        <span class="amount">89,99</span>
                         <span class="period">/Monat</span>
                     </div>
                     <ul class="features-list">
-                        <li>Alle Professional Features</li>
-                        <li>Multi-Location Support</li>
+                        <li>Unbegrenzte Plätze</li>
+                        <li>Unbegrenzte Mitglieder</li>
+                        <li>Online Buchungssystem</li>
+                        <li>24/7 Premium Support</li>
+                        <li>Mobile App Zugang</li>
+                        <li>Erweiterte Statistiken</li>
                         <li>API Zugang</li>
-                        <li>Individuelle Anpassungen</li>
-                        <li>Dedicated Account Manager</li>
+                        <li>Custom Branding</li>
+                        <li>Dedizierter Account Manager</li>
                     </ul>
-                    <a href="#demo" class="btn btn-secondary">Kontakt</a>
+                    <button class="btn btn-secondary" onclick="subscribeToPlan('enterprise')">Jetzt starten</button>
                 </div>
             </div>
         </div>
@@ -276,5 +282,44 @@
     </footer>
 
     <script src="../scripts/main.js"></script>
+    
+    <!-- Stripe Checkout Script -->
+    <script>
+        const PRICE_IDS = {
+            starter: 'price_1TLry7JvWNSw6abfZtNCxsvZ',
+            professional: 'price_1TLrzNJvWNSw6abf5otuJisY',
+            enterprise: 'price_1TlFzgJvWNSw6abfO25Fh5cv'
+        };
+        
+        async function subscribeToPlan(planType) {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => btn.disabled = true);
+            event.target.textContent = '⏳ Wird geladen...';
+            
+            try {
+                const response = await fetch('/.netlify/functions/create-checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ priceId: PRICE_IDS[planType] })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Fehler beim Erstellen der Session');
+                }
+
+                // Redirect to Stripe Checkout
+                window.location.href = data.url;
+                
+            } catch (err) {
+                alert('Fehler: ' + err.message);
+                buttons.forEach(btn => {
+                    btn.disabled = false;
+                    if (btn.textContent.includes('⏳')) btn.textContent = 'Jetzt starten';
+                });
+            }
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap");
+
+body {
+  margin: 0;
+  color: #FFFFFFDD;
+  position: relative;
+  font-family: "Inter", sans-serif;
+}
+
+body > section:not(.hero-cards) {
+  background-color: #ffffff;
+  color: #2c3e50;
+}
+
+.hero-cards {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-color: #1a1a1a;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.6);
+}
+
+.card-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FFFFFFDD;
+  padding-left: 16px;
+}
+
+.content-place {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.content-title-1,
+.content-title-2 {
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+}
+
+.content-start {
+  width: 30px;
+  height: 5px;
+  border-radius: 99px;
+  background-color: #FFFFFFDD;
+}
+
+.details {
+  z-index: 22;
+  position: absolute;
+  top: 240px;
+  left: 60px;
+}
+
+.details .place-box {
+  height: 46px;
+  overflow: hidden;
+}
+
+.details .place-box .text {
+  padding-top: 16px;
+  font-size: 20px;
+  position: relative;
+}
+
+.details .place-box .text:before {
+  top: 0;
+  left: 0;
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 4px;
+  border-radius: 99px;
+  background-color: white;
+}
+
+.details .title-1,
+.details .title-2 {
+  font-weight: 600;
+  font-size: 72px;
+  font-family: "Oswald", sans-serif;
+}
+
+.details .title-box-1,
+.details .title-box-2 {
+  margin-top: 2px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.details > .desc {
+  margin-top: 16px;
+  width: 500px;
+  line-height: 1.6;
+}
+
+.details > .cta {
+  width: 500px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.details > .cta > .bookmark {
+  border: none;
+  background-color: #515aa4;
+  width: 36px;
+  height: 36px;
+  border-radius: 99px;
+  color: white;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.details > .cta > .bookmark:hover {
+  transform: scale(1.1);
+}
+
+.details > .cta > .bookmark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.details > .cta > .discover {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  height: 36px;
+  border-radius: 99px;
+  color: #ffffff;
+  padding: 4px 24px;
+  font-size: 12px;
+  margin-left: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.details > .cta > .discover:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.indicator {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  z-index: 60;
+  background-color: #515aa4;
+}
+
+.pagination {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pagination > .arrow {
+  z-index: 60;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 2px solid #ffffff55;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination > .arrow:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pagination > .arrow:nth-child(2) {
+  margin-left: 20px;
+}
+
+.pagination > .arrow svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+  color: #ffffff99;
+}
+
+.pagination .progress-sub-container {
+  margin-left: 24px;
+  z-index: 60;
+  width: 500px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.pagination .progress-sub-container .progress-sub-background {
+  width: 500px;
+  height: 3px;
+  background-color: #ffffff33;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.pagination .progress-sub-container .progress-sub-background .progress-sub-foreground {
+  height: 3px;
+  background-color: #515aa4;
+  transition: width 0.3s ease;
+}
+
+.pagination .slide-numbers {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  z-index: 60;
+  position: relative;
+  margin-left: 20px;
+}
+
+.pagination .slide-numbers .item {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 100;
+}
+
+/* Transparent Navbar */
+.transparent-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0;
+}
+
+.transparent-nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+  font-family: "Oswald", sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #515aa4;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Navbar responsive */
+@media (max-width: 768px) {
+  .transparent-nav-container {
+    padding: 15px 20px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+    font-size: 12px;
+  }
+  
+  .nav-brand {
+    font-size: 20px;
+  }
+}
+
+/* Navbar hide on hero section */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .details {
+    left: 40px;
+    top: 200px;
+  }
+  
+  .details .title-1,
+  .details .title-2 {
+    font-size: 48px;
+  }
+  
+  .details .title-box-1,
+  .details .title-box-2 {
+    height: 70px;
+  }
+  
+  .details > .desc {
+    width: 400px;
+    font-size: 14px;
+  }
+  
+  .details > .cta {
+    width: 400px;
+  }
+  
+  .pagination .progress-sub-container {
+    width: 300px;
+  }
+  
+  .pagination .progress-sub-container .progress-sub-background {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    left: 20px;
+    top: 150px;
+  }
+  
+  .details .title-1,
+  .details .title-2 {
+    font-size: 36px;
+  }
+  
+  .details .title-box-1,
+  .details .title-box-2 {
+    height: 50px;
+  }
+  
+  .details > .desc {
+    width: calc(100vw - 40px);
+    font-size: 13px;
+  }
+  
+  .details > .cta {
+    width: calc(100vw - 40px);
+  }
+  
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .pagination > .arrow:nth-child(2) {
+    margin-left: 0;
+  }
+  
+  .pagination .progress-sub-container {
+    margin-left: 0;
+    width: 200px;
+  }
+  
+  .pagination .progress-sub-container .progress-sub-background {
+    width: 200px;
+  }
+  
+  .card-content {
+    padding-left: 12px;
+  }
+  
+  .content-title-1,
+  .content-title-2 {
+    font-size: 16px;
+  }
+  
+  .content-place {
+    font-size: 11px;
+  }
+}
