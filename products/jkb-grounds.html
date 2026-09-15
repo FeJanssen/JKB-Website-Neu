@@ -7,6 +7,139 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/product.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        #pricing {
+            scroll-margin-top: 80px; /* Abstand für die fixe Navbar */
+        }
+
+        /* Individual Card */
+        .individual-card {
+            border: 2px dashed #667eea;
+        }
+
+        .individual-card .amount-text {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .individual-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+
+        /* Individual Modal */
+        .individual-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .individual-modal.active {
+            display: flex;
+        }
+
+        .individual-modal-content {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 540px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .individual-modal-content h2 {
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .modal-subtitle {
+            color: #666;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .form-success h3 {
+            color: #22c55e;
+            margin-bottom: 12px;
+        }
+
+        .form-success p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -44,7 +177,7 @@
                     <h1>JKB Grounds</h1>
                     <p class="product-subtitle">Die intelligente Buchungssoftware für Tennisplätze und Tischreservierungen in der Gastronomie</p>
                     <div class="product-hero-buttons">
-                        <a href="#demo" class="btn btn-primary">Demo anfragen</a>
+                        <a href="#pricing" class="btn btn-primary">Jetzt buchen</a>
                         <a href="#features" class="btn btn-secondary">Features entdecken</a>
                     </div>
                 </div>
@@ -170,7 +303,7 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="product-pricing">
+    <section id="pricing" class="product-pricing">
         <div class="container">
             <div class="section-header">
                 <h2>Transparent & Fair</h2>
@@ -232,9 +365,63 @@
                     </ul>
                     <button class="btn btn-secondary" onclick="subscribeToPlan('enterprise')">Jetzt starten</button>
                 </div>
+                <div class="pricing-card individual-card">
+                    <h3>Individual</h3>
+                    <div class="price">
+                        <span class="amount-text">Auf Anfrage</span>
+                    </div>
+                    <p class="individual-desc">Maßgeschneiderte Custom-Lösungen für Ihre individuellen Anforderungen</p>
+                    <ul class="features-list">
+                        <li>Individuelle Software-Entwicklung</li>
+                        <li>Maßgeschneiderte Features</li>
+                        <li>Persönliche Beratung</li>
+                        <li>Individuelle Integrationen</li>
+                        <li>Flexible Vertragslaufzeiten</li>
+                        <li>Dediziertes Entwickler-Team</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openIndividualForm()">Anfrage senden</button>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Individual Anfrage Modal -->
+    <div id="individualModal" class="individual-modal">
+        <div class="individual-modal-content">
+            <button class="modal-close" onclick="closeIndividualForm()" aria-label="Schließen">&times;</button>
+            <h2>Individual Paket anfragen</h2>
+            <p class="modal-subtitle">Erzählen Sie uns von Ihrem Projekt – wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+            <form name="individual-anfrage" method="POST" data-netlify="true" onsubmit="handleIndividualSubmit(event)">
+                <input type="hidden" name="form-name" value="individual-anfrage">
+                <div class="form-group">
+                    <label for="ind-name">Name *</label>
+                    <input type="text" id="ind-name" name="name" required placeholder="Max Mustermann">
+                </div>
+                <div class="form-group">
+                    <label for="ind-company">Unternehmen / Verein</label>
+                    <input type="text" id="ind-company" name="company" placeholder="Musterverein e.V.">
+                </div>
+                <div class="form-group">
+                    <label for="ind-email">E-Mail *</label>
+                    <input type="email" id="ind-email" name="email" required placeholder="max@beispiel.de">
+                </div>
+                <div class="form-group">
+                    <label for="ind-phone">Telefon</label>
+                    <input type="tel" id="ind-phone" name="phone" placeholder="+49 123 456789">
+                </div>
+                <div class="form-group">
+                    <label for="ind-message">Ihre Anforderungen *</label>
+                    <textarea id="ind-message" name="message" rows="5" required placeholder="Beschreiben Sie kurz, welche individuelle Lösung Sie benötigen..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary form-submit-btn">Anfrage absenden</button>
+            </form>
+            <div id="individualSuccess" class="form-success" style="display: none;">
+                <h3>Vielen Dank!</h3>
+                <p>Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                <button class="btn btn-secondary" onclick="closeIndividualForm()">Schließen</button>
+            </div>
+        </div>
+    </div>
 
     <!-- CTA Section -->
     <section id="demo" class="product-cta">
@@ -285,6 +472,48 @@
     
     <!-- Stripe Checkout Script -->
     <script>
+        // Individual Modal Funktionen
+        function openIndividualForm() {
+            document.getElementById('individualModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeIndividualForm() {
+            document.getElementById('individualModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Modal schließen bei Klick auf Hintergrund
+        document.getElementById('individualModal').addEventListener('click', function(e) {
+            if (e.target === this) closeIndividualForm();
+        });
+
+        async function handleIndividualSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const button = form.querySelector('.form-submit-btn');
+            button.textContent = 'Wird gesendet...';
+            button.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                });
+
+                // Formular ausblenden, Erfolgsmeldung zeigen
+                form.style.display = 'none';
+                document.getElementById('individualSuccess').style.display = 'block';
+            } catch (error) {
+                console.error('Fehler:', error);
+                alert('Es gab einen Fehler. Bitte versuchen Sie es erneut.');
+                button.textContent = 'Anfrage absenden';
+                button.disabled = false;
+            }
+        }
+
         const PRICE_IDS = {
             starter: 'price_1TLry7JvWNSw6abfZtNCxsvZ',
             professional: 'price_1TLrzNJvWNSw6abf5otuJisY',
