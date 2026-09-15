@@ -4,22 +4,25 @@ const data = [
         place: 'Buchungssoftware',
         title: 'JKB',
         title2: 'GROUNDS',
-        description: 'Die perfekte Buchungssoftware für Tennisplätze und Tischreservierungen in der Gastronomie. Verwalten Sie Ihre Ressourcen effizient und steigern Sie Ihren Umsatz.',
-        image: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1200'
+        description: 'Die perfekte Buchungssoftware für Tennisplätze. Verwalten Sie Ihre Tennisanlagen effizient, automatisieren Sie Buchungen und steigern Sie Ihren Umsatz.',
+        image: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1200',
+        subtitle: 'Tennis'
     },
     {
-        place: 'Hotelmanagement',
+        place: 'Buchungssoftware',
         title: 'JKB',
-        title2: 'HOTELS',
-        description: 'All-in-One Hotelsoftware für modernes Hotelmanagement. Von der Reservierung bis zur Abrechnung - alles in einer integrierten Lösung.',
-        image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200'
+        title2: 'GROUNDS',
+        description: 'Die perfekte Buchungssoftware für Padel-Courts. Moderne Platzverwaltung für den am schnellsten wachsenden Racket-Sport der Welt.',
+        image: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=1200',
+        subtitle: 'Padel'
     },
     {
-        place: 'Office Suite',
+        place: 'Buchungssoftware',
         title: 'JKB',
-        title2: 'OFFICE',
-        description: 'Umfassende Office-Software mit Terminkalender, Aufgaben-Management, CRM und Personalverwaltung. Alles was Sie für Ihr Büro brauchen in einer Software.',
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200'
+        title2: 'GROUNDS',
+        description: 'Die perfekte Buchungssoftware für Friseursalons. Terminverwaltung, Kundenbindung und Online-Buchungen - alles in einer Software.',
+        image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200',
+        subtitle: 'Friseur'
     }
 ];
 
@@ -35,6 +38,7 @@ const cardContents = data.map((i, index) => `
         <div class="content-place">${i.place}</div>
         <div class="content-title-1">${i.title}</div>
         <div class="content-title-2">${i.title2}</div>
+        <div class="content-subtitle">${i.subtitle}</div>
     </div>
 `).join('');
 

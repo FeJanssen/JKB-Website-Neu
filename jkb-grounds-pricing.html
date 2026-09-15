@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preise - JKB Grounds</title>
+<meta name="description" content="Wähle deinen Plan für JKB Grounds. Transparente Preise ohne versteckte Kosten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --titanium: #F4F5F6;
+  --carbon: #0D0E15;
+  --volt: #D1FF00;
+  --steel: #D9E0E4;
+  --graphite: #1A1D1A;
+  --white: #FFFFFF;
+  --ease-silk: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--carbon);
+  color: var(--titanium);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(13, 14, 21, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(217, 224, 228, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--volt);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.back-link {
+  color: var(--steel);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-family: 'JetBrains Mono', monospace;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: var(--volt);
+}
+
+/* Pricing Section */
+.pricing-section {
+  padding: 140px 2rem 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.pricing-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: var(--volt);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.pricing-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.pricing-subtitle {
+  font-size: 1.25rem;
+  color: var(--steel);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: linear-gradient(135deg, rgba(244, 245, 246, 0.05) 0%, rgba(26, 29, 26, 0.05) 100%);
+  border: 1px solid rgba(217, 224, 228, 0.15);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  position: relative;
+  transition: all 0.4s var(--ease-silk);
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--volt), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+  border-radius: 20px 20px 0 0;
+}
+
+.pricing-card:hover {
+  border-color: var(--volt);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(209, 255, 0, 0.15);
+}
+
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+.pricing-card.featured {
+  border-color: var(--volt);
+  box-shadow: 0 10px 40px rgba(209, 255, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+  opacity: 1;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  right: 2rem;
+  background: var(--volt);
+  color: var(--carbon);
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.plan-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: var(--volt);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.plan-price {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.plan-price small {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--steel);
+}
+
+.plan-description {
+  color: var(--steel);
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.plan-features {
+  list-style: none;
+  margin-bottom: 2.5rem;
+  padding: 0;
+}
+
+.plan-features li {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(217, 224, 228, 0.1);
+  color: var(--titanium);
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  line-height: 1.5;
+}
+
+.plan-features li:last-child {
+  border-bottom: none;
+}
+
+.plan-features li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--volt);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+}
+
+.plan-button {
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background: transparent;
+  border: 2px solid var(--volt);
+  border-radius: 10px;
+  color: var(--volt);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-silk);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.plan-button:hover {
+  background: var(--volt);
+  color: var(--carbon);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(209, 255, 0, 0.3);
+}
+
+.pricing-card.featured .plan-button {
+  background: var(--volt);
+  color: var(--carbon);
+}
+
+.pricing-card.featured .plan-button:hover {
+  background: #e0ff33;
+}
+
+/* Footer */
+footer {
+  padding: 4rem 2rem 2rem;
+  border-top: 1px solid rgba(217, 224, 228, 0.1);
+  text-align: center;
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: var(--steel);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 0.875rem;
+  font-family: 'JetBrains Mono', monospace;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--volt);
+}
+
+.footer-copyright {
+  color: rgba(217, 224, 228, 0.5);
+  font-size: 0.875rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 120px 1.5rem 60px;
+  }
+  
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .plan-price {
+    font-size: 3rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-container">
+    <a href="/jkb-grounds.html" class="logo">JKB GROUNDS</a>
+    <a href="/jkb-grounds.html" class="back-link">← Zurück zur Übersicht</a>
+  </div>
+</header>
+
+<!-- Pricing Section -->
+<section class="pricing-section">
+  <div class="pricing-header">
+    <p class="pricing-eyebrow">Transparente Preise</p>
+    <h1 class="pricing-title">Wähle deinen Plan</h1>
+    <p class="pricing-subtitle">Alle Pläne beinhalten 14 Tage kostenlose Testphase. Keine versteckten Kosten, keine Kompromisse.</p>
+  </div>
+
+  <div class="pricing-grid">
+    <!-- Starter Plan -->
+    <div class="pricing-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">14,99€ <small>/Monat</small></div>
+      <div class="plan-description">Perfekt für kleine Betriebe</div>
+      <ul class="plan-features">
+        <li>Bis zu 3 Plätze oder Stühle</li>
+        <li>Bis zu 25 Mitglieder</li>
+        <li>Online Buchungskalender</li>
+        <li>Kundenverwaltung</li>
+        <li>E-Mail Benachrichtigungen</li>
+        <li>Basis-Support per E-Mail</li>
+        <li>Mobile App Zugang</li>
+      </ul>
+      <button class="plan-button" onclick="subscribeToPlan('starter')">Plan wählen</button>
+    </div>
+
+    <!-- Professional Plan -->
+    <div class="pricing-card featured">
+      <div class="pricing-badge">Beliebt</div>
+      <div class="plan-name">Professional</div>
+      <div class="plan-price">29,99€ <small>/Monat</small></div>
+      <div class="plan-description">Für wachsende Unternehmen</div>
+      <ul class="plan-features">
+        <li>Bis zu 10 Plätze oder Stühle</li>
+        <li>Bis zu 100 Mitglieder</li>
+        <li>Alle Starter Features</li>
+        <li>Online Bezahlung mit Stripe</li>
+        <li>Analytics & Reporting</li>
+        <li>SMS Benachrichtigungen</li>
+        <li>Priority Support</li>
+        <li>Custom Branding</li>
+      </ul>
+      <button class="plan-button" onclick="subscribeToPlan('professional')">Plan wählen</button>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="pricing-card">
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-price">89,99€ <small>/Monat</small></div>
+      <div class="plan-description">Für große Organisationen</div>
+      <ul class="plan-features">
+        <li>Unbegrenzte Plätze und Stühle</li>
+        <li>Unbegrenzte Mitglieder</li>
+        <li>Alle Professional Features</li>
+        <li>White Label Lösung</li>
+        <li>API Zugang</li>
+        <li>Multi-Standort Support</li>
+        <li>24/7 Premium Support</li>
+        <li>Dedizierter Account Manager</li>
+      </ul>
+      <button class="plan-button" onclick="subscribeToPlan('enterprise')">Plan wählen</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="/jkb-grounds.html">Übersicht</a>
+    <a href="/">Startseite</a>
+    <a href="/privacy-policy.html">Datenschutz</a>
+  </div>
+  <div class="footer-copyright">
+    © 2026 JKB Software GmbH. Alle Rechte vorbehalten.
+  </div>
+</footer>
+
+<!-- Stripe Integration Script -->
+<script>
+const PRICE_IDS = {
+  starter: 'price_1QRry7JvWNSw6abfZtNCxsvZ',
+  professional: 'price_1QRrzNJvWNSw6abf5otuJisY',
+  enterprise: 'price_1QlFzgJvWNSw6abfO25Fh5cv'
+};
+
+async function subscribeToPlan(plan) {
+  const priceId = PRICE_IDS[plan];
+  if (!priceId) {
+    alert('Ungültiger Plan ausgewählt');
+    return;
+  }
+
+  const button = event.target;
+  const originalText = button.textContent;
+  button.textContent = 'Wird geladen...';
+  button.disabled = true;
+
+  try {
+    const response = await fetch('/.netlify/functions/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ priceId: priceId }),
+    });
+
+    const data = await response.json();
+
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      throw new Error('Keine Checkout-URL erhalten');
+    }
+  } catch (error) {
+    console.error('Fehler:', error);
+    alert('Es gab einen Fehler. Bitte versuche es erneut.');
+    button.textContent = originalText;
+    button.disabled = false;
+  }
+}
+</script>
+</body>
+</html>

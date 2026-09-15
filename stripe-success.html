@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Willkommen - JKB Grounds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,112 +15,449 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            color: #ffffff;
         }
         
         .success-container {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            max-width: 600px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            max-width: 700px;
+            width: 100%;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 0.6s ease-out;
         }
         
-        .checkmark {
-            font-size: 5rem;
-            color: #4CAF50;
-            margin-bottom: 1rem;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            animation: scaleIn 0.5s ease-out 0.3s backwards;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
         }
         
         h1 {
-            color: #333;
+            color: #ffffff;
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
         }
         
         .subtitle {
-            color: #666;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
         }
         
         .next-steps {
-            background: #f5f5f5;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
             padding: 2rem;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             text-align: left;
         }
         
         .next-steps h2 {
-            color: #333;
-            margin-bottom: 1rem;
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
         
-        .next-steps ol {
-            margin-left: 1.5rem;
-            color: #555;
+        .steps-grid {
+            display: grid;
+            gap: 1rem;
         }
         
-        .next-steps li {
-            margin: 0.8rem 0;
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .step-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+        
+        .step-number {
+            min-width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .step-text {
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.6;
+            font-size: 1rem;
+            padding-top: 5px;
         }
         
         .cta-button {
             display: inline-block;
             padding: 1.2rem 3rem;
-            background: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: background 0.3s ease;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
         
         .cta-button:hover {
-            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
         }
         
         .info-text {
-            color: #888;
+            color: rgba(255, 255, 255, 0.4);
             margin-top: 2rem;
             font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Club Registration Form */
+        .club-form {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            text-align: left;
+        }
+        
+        .club-form h2 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-grid {
+            display: grid;
+            gap: 1.2rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.8rem 1rem;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 0.5rem;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .submit-button:active {
+            transform: translateY(0);
+        }
+        
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 3rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .next-steps {
+                padding: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .club-form {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="success-container">
-        <div class="checkmark">✅</div>
+        <div class="success-icon">✓</div>
         <h1>Willkommen bei JKB Grounds!</h1>
         <p class="subtitle">Dein Abo wurde erfolgreich aktiviert.</p>
         
-        <div class="next-steps">
-            <h2>Nächste Schritte:</h2>
-            <ol>
-                <li>Erstelle deinen Vereins-Account in der Web-App</li>
-                <li>Konfiguriere deine Plätze und Preise</li>
-                <li>Lade deine Mitglieder ein</li>
-                <li>Starte mit der Platzverwaltung</li>
-            </ol>
+        <!-- Club Registration Form -->
+        <div class="club-form">
+            <h2>Vervollständige deine Vereinsdaten</h2>
+            <form id="clubForm" onsubmit="handleSubmit(event)">
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="clubName">Name des Vereins *</label>
+                        <input type="text" id="clubName" name="clubName" placeholder="z.B. TC Grün-Weiß München" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="street">Straße *</label>
+                            <input type="text" id="street" name="street" placeholder="Musterstraße" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="houseNumber">Hausnummer *</label>
+                            <input type="text" id="houseNumber" name="houseNumber" placeholder="123" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postalCode">Postleitzahl *</label>
+                            <input type="text" id="postalCode" name="postalCode" placeholder="12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ort *</label>
+                            <input type="text" id="city" name="city" placeholder="München" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="country">Land *</label>
+                        <select id="country" name="country" required>
+                            <option value="">Bitte wählen</option>
+                            <option value="DE" selected>Deutschland</option>
+                            <option value="AT">Österreich</option>
+                            <option value="CH">Schweiz</option>
+                            <option value="IT">Italien</option>
+                            <option value="FR">Frankreich</option>
+                            <option value="NL">Niederlande</option>
+                            <option value="BE">Belgien</option>
+                            <option value="LU">Luxemburg</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="email">E-Mail (optional)</label>
+                        <input type="email" id="email" name="email" placeholder="verein@beispiel.de">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="phone">Telefonnummer *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+49 123 456789" required>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">
+                        ✓ Verein erstellen und fortfahren
+                    </button>
+                </div>
+            </form>
         </div>
         
-        <a href="https://app.jkb-grounds.de/register" class="cta-button">
-            🚀 Jetzt zur App starten
-        </a>
+        <div class="next-steps">
+            <h2>Was passiert als Nächstes?</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Dein Verein wird automatisch angelegt</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Du erhältst Zugang zur Web-App</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Konfiguriere deine Plätze und Preise</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Lade deine Mitglieder ein</div>
+                </div>
+            </div>
+        </div>
         
         <p class="info-text">
-            Du erhältst in Kürze eine E-Mail mit deinen Zugangsdaten und weiteren Informationen.
+            Nach dem Absenden erhältst du eine E-Mail mit deinen Zugangsdaten.
         </p>
     </div>
+    
+    <script>
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            const submitButton = event.target.querySelector('.submit-button');
+            const originalText = submitButton.textContent;
+            
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = '⏳ Verein wird erstellt...';
+            
+            // Get session_id and price_id from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const sessionId = urlParams.get('session_id');
+            const stripePriceId = urlParams.get('price_id');
+            
+            // Get form data
+            const formData = {
+                clubName: document.getElementById('clubName').value,
+                street: document.getElementById('street').value,
+                houseNumber: document.getElementById('houseNumber').value,
+                postalCode: document.getElementById('postalCode').value,
+                city: document.getElementById('city').value,
+                country: document.getElementById('country').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email')?.value || null,
+                sessionId: sessionId,
+                stripePriceId: stripePriceId,
+            };
+            
+            try {
+                // Send to Netlify Function
+                const response = await fetch('/.netlify/functions/create-club', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+                
+                const result = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(result.error || 'Failed to create club');
+                }
+                
+                console.log('Club created successfully:', result);
+                
+                // Success - redirect to admin setup page
+                window.location.href = '/admin-setup.html?club_id=' + 
+                    encodeURIComponent(result.club.id) + 
+                    '&club_name=' + encodeURIComponent(result.club.name);
+                
+            } catch (error) {
+                console.error('Error creating club:', error);
+                alert('Es gab einen Fehler beim Erstellen des Vereins: ' + error.message + '\n\nBitte versuche es erneut oder kontaktiere den Support.');
+                
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            }
+        }
+    </script>
 </body>
 </html>

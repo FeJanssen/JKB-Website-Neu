@@ -42,11 +42,12 @@ exports.handler = async (event) => {
         quantity: 1,
       }],
       mode: 'subscription',
-      success_url: `${baseUrl}/stripe-success.html?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${baseUrl}/stripe-success.html?session_id={CHECKOUT_SESSION_ID}&price_id=${priceId}`,
       cancel_url: `${baseUrl}/products/jkb-grounds.html`,
       // Wichtig: Metadata für später (Verein-Erstellung)
       metadata: {
-        integration_type: 'jkb_subscription'
+        integration_type: 'jkb_subscription',
+        price_id: priceId
       }
     });
 

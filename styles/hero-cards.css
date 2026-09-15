@@ -51,6 +51,15 @@ body > section:not(.hero-cards) {
   font-family: "Oswald", sans-serif;
 }
 
+.content-subtitle {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #515aa4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .content-start {
   width: 30px;
   height: 5px;
