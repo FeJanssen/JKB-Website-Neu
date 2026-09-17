@@ -58,6 +58,189 @@
   margin-bottom: 1rem;
   font-family: 'JetBrains Mono', monospace;
 }
+
+/* ===== New Hero Section ===== */
+.card-hero {
+  position: relative;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(13, 14, 21, 0.75) 0%, rgba(13, 14, 21, 0.55) 50%, rgba(13, 14, 21, 0.85) 100%);
+  z-index: 1;
+}
+
+.hero-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+}
+
+.hero-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.topbar-cta {
+  padding: 12px 28px;
+  font-size: 0.8125rem;
+}
+
+.hero-stage {
+  position: relative;
+  z-index: 5;
+}
+
+.hero-stage .hero-title {
+  color: var(--white);
+}
+
+.hero-stage .hero-sub {
+  color: var(--steel);
+  max-width: 640px;
+}
+
+/* Google Rating */
+.hero-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.hero-rating .stars {
+  color: #FFC107;
+  font-size: 1.125rem;
+  letter-spacing: 2px;
+}
+
+.hero-rating .rating-text {
+  color: var(--steel);
+  font-size: 0.8125rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.cta-button-outline {
+  display: inline-block;
+  padding: 16px 48px;
+  background: transparent;
+  color: var(--white);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s var(--ease-silk);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cta-button-outline:hover {
+  border-color: var(--volt);
+  color: var(--volt);
+  transform: translateY(-2px);
+}
+
+/* Logo Marquee */
+.logo-marquee {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  overflow: hidden;
+  padding: 10px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.logo-track img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.8);
+  opacity: 0.75;
+  transition: all 0.3s ease;
+}
+
+.logo-track img:hover {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .hero-topbar {
+    padding: 1rem 1.25rem;
+  }
+
+  .hero-logo img {
+    height: 36px;
+  }
+
+  .topbar-cta {
+    padding: 10px 16px;
+    font-size: 0.6875rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-track img {
+    height: 40px;
+  }
+
+  .logo-track {
+    gap: 2.5rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -66,19 +249,53 @@
 
 <!-- card 1: Hero -->
 <section class="zcard card-hero" data-card="1">
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="glass-shape glass-a" aria-hidden="true"></div>
-  <div class="glass-shape glass-b" aria-hidden="true"></div>
-  <div class="glass-shape glass-c" aria-hidden="true"></div>
+  <!-- Video Background -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="Assets/hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Topbar: Logo links, CTA rechts -->
+  <div class="hero-topbar">
+    <a href="/" class="hero-logo">
+      <img src="Assets/logoohnehintergund.png" alt="JKB Logo">
+    </a>
+    <a href="/jkb-grounds-pricing.html" class="cta-button topbar-cta">Jetzt kostenfrei testen</a>
+  </div>
+
   <div class="hero-stage">
-    <p class="hero-eyebrow">Professionelle Buchungssoftware</p>
     <h1 class="hero-title">JKB GROUNDS</h1>
-    <p class="hero-sub">Eine Plattform. Unendliche Möglichkeiten. Präzise entwickelte Software für Teams, die an der Grenze dessen arbeiten, was Verwaltung ermöglicht.</p>
-    <div class="hero-cta">
-      <a href="/jkb-grounds-pricing.html" class="cta-button">Jetzt buchen</a>
+    <p class="hero-sub">Schluss mit manuellem Verwaltungschaos ‒ Die All‒in‒One‒Software für maximale Auslastung.</p>
+    <div class="hero-rating">
+      <span class="stars">★★★★★</span>
+      <span class="rating-text">4,9 out of 5 on Google</span>
+    </div>
+    <div class="hero-buttons">
+      <a href="/jkb-grounds-pricing.html" class="cta-button">Jetzt kostenfrei testen</a>
+      <a href="#" class="cta-button-outline" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'}); return false;">Mehr erfahren</a>
     </div>
   </div>
-  <div class="hero-scroll-hint">Scroll für mehr</div>
+
+  <!-- Logo Marquee -->
+  <div class="logo-marquee" aria-hidden="true">
+    <div class="logo-track">
+      <img src="Assets/cropped-cropped-TCC-Cottbus-Logo_3.png" alt="TCC Cottbus">
+      <img src="Assets/Logo_Deutscher_Tennis_Bund.svg" alt="Deutscher Tennis Bund">
+      <img src="Assets/Logo_Erfurter_Tennisclub_Rot-Weiß.png" alt="Erfurter Tennisclub Rot-Weiß">
+      <img src="Assets/logo-tennisclub-bickenbach-ev_3.png" alt="Tennisclub Bickenbach">
+      <img src="Assets/LogoALSFELDTC-03.png" alt="Alsfeld TC">
+      <img src="Assets/SVH.png" alt="SVH">
+      <img src="Assets/teaserbox_2487233097.png" alt="Partner">
+      <!-- Duplikat für nahtlosen Loop -->
+      <img src="Assets/cropped-cropped-TCC-Cottbus-Logo_3.png" alt="">
+      <img src="Assets/Logo_Deutscher_Tennis_Bund.svg" alt="">
+      <img src="Assets/Logo_Erfurter_Tennisclub_Rot-Weiß.png" alt="">
+      <img src="Assets/logo-tennisclub-bickenbach-ev_3.png" alt="">
+      <img src="Assets/LogoALSFELDTC-03.png" alt="">
+      <img src="Assets/SVH.png" alt="">
+      <img src="Assets/teaserbox_2487233097.png" alt="">
+    </div>
+  </div>
 </section>
 
 <!-- card 2: Macro Image -->

@@ -42,6 +42,21 @@ exports.handler = async (event) => {
         quantity: 1,
       }],
       mode: 'subscription',
+      // Zahlungsmethoden: Karte + SEPA-Lastschrift
+      payment_method_types: ['card', 'sepa_debit'],
+      // Zahlungsdaten werden bei Checkout erfasst (Pflicht),
+      // abgebucht wird aber erst nach der Testphase
+      payment_method_collection: 'always',
+      subscription_data: {
+        // 14 Tage kostenlose Testphase
+        trial_period_days: 14,
+        trial_settings: {
+          end_behavior: {
+            // Falls keine Zahlungsmethode vorhanden: Abo pausieren statt Fehler
+            missing_payment_method: 'pause'
+          }
+        }
+      },
       success_url: `${baseUrl}/stripe-success.html?session_id={CHECKOUT_SESSION_ID}&price_id=${priceId}`,
       cancel_url: `${baseUrl}/products/jkb-grounds.html`,
       // Wichtig: Metadata für später (Verein-Erstellung)

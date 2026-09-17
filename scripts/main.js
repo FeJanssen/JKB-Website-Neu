@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
 
     // Toggle mobile menu
+    if (hamburger && navMenu) {
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bars[2].style.transform = 'none';
         });
     });
+    } // end if (hamburger && navMenu)
 
     // Smooth scrolling for anchor links
     navLinks.forEach(link => {
@@ -105,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll effect to navbar
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
         if (window.scrollY > 50) {
             navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
             navbar.style.backdropFilter = 'blur(10px)';
@@ -318,6 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar background on scroll
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
             navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
