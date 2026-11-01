@@ -6,7 +6,7 @@
 
 # Form notifications - simplified and working configuration
 [[forms]]
-  name = "contact"
+  name = "kontakt"
   
   [[forms.notifications]]
     type = "email"

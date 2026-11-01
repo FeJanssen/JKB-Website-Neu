@@ -1,9 +1,5 @@
 # Netlify redirects file
 
-# Success page redirect
-/success /success.html 200
-
-# Default redirects
-/contact /index.html#contact 301
-/products /index.html#products 301
-/about /index.html#about 301
+# Alte Produkt-URLs auf neue Seiten
+/jkb-grounds.html /products/jkb-grounds.html 301
+/products /pricing 301
