@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- google tag manager -->
+  <link rel="shortcut icon" type="image/png" href="/Assets/logoohnehintergund.png">
+
+  <meta name="theme-name" content="jkb-software">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="generator" content="Astro v7.0.3">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <style>
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0";
+      src: url("/_astro/fonts/2536380416fd59fe.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0";
+      src: url("/_astro/fonts/2536380416fd59fe.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0";
+      src: url("/_astro/fonts/2536380416fd59fe.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0";
+      src: url("/_astro/fonts/6d4bffbf7335e8f1.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0";
+      src: url("/_astro/fonts/6d4bffbf7335e8f1.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0";
+      src: url("/_astro/fonts/6d4bffbf7335e8f1.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+FEFF,U+FFFD;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0 fallback: Arial";
+      src: local("Arial");
+      font-display: swap;
+      font-weight: 400;
+      font-style: italic;
+      size-adjust: 96.4951%;
+      ascent-override: 100.3937%;
+      descent-override: 24.9972%;
+      line-gap-override: 0%;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0 fallback: Arial";
+      src: local("Arial");
+      font-display: swap;
+      font-weight: 500;
+      font-style: italic;
+      size-adjust: 96.4951%;
+      ascent-override: 100.3937%;
+      descent-override: 24.9972%;
+      line-gap-override: 0%;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0 fallback: Arial";
+      src: local("Arial");
+      font-display: swap;
+      font-weight: 600;
+      font-style: italic;
+      size-adjust: 96.4951%;
+      ascent-override: 100.3937%;
+      descent-override: 24.9972%;
+      line-gap-override: 0%;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0 fallback: Arial";
+      src: local("Arial");
+      font-display: swap;
+      font-weight: 400;
+      font-style: normal;
+      size-adjust: 96.4951%;
+      ascent-override: 100.3937%;
+      descent-override: 24.9972%;
+      line-gap-override: 0%;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0 fallback: Arial";
+      src: local("Arial");
+      font-display: swap;
+      font-weight: 500;
+      font-style: normal;
+      size-adjust: 96.4951%;
+      ascent-override: 100.3937%;
+      descent-override: 24.9972%;
+      line-gap-override: 0%;
+    }
+
+    @font-face {
+      font-family: "Inter Tight-b561c76be74f6ad0 fallback: Arial";
+      src: local("Arial");
+      font-display: swap;
+      font-weight: 600;
+      font-style: normal;
+      size-adjust: 96.4951%;
+      ascent-override: 100.3937%;
+      descent-override: 24.9972%;
+      line-gap-override: 0%;
+    }
+
+    :root {
+      --font-primary: "Inter Tight-b561c76be74f6ad0", "Inter Tight-b561c76be74f6ad0 fallback: Arial", sans-serif;
+    }
+  </style>
+
+  <link rel="preload" href="/_astro/fonts/2536380416fd59fe.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/_astro/fonts/6d4bffbf7335e8f1.woff2" as="font" type="font/woff2" crossorigin>
+
+  <style>
+    @font-face {
+      font-family: Urbanist-b2e50ec4ad0ca523;
+      src: url("/_astro/fonts/c99d5c25d473f179.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: Urbanist-b2e50ec4ad0ca523;
+      src: url("/_astro/fonts/c99d5c25d473f179.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: Urbanist-b2e50ec4ad0ca523;
+      src: url("/_astro/fonts/c377b20c08689b67.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: Urbanist-b2e50ec4ad0ca523;
+      src: url("/_astro/fonts/c377b20c08689b67.woff2") format("woff2");
+      font-display: swap;
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Urbanist-b2e50ec4ad0ca523 fallback: Arial";
+      src: local("Arial");
+      font-display: swap;
+      font-weight: 500;
+      font-style: italic;
+      size-adjust: 100.0447%;
+      ascent-override: 94.9576%;
+      descent-override: 24.9888%;
+      line-gap-override: 0%;
+    }
+
+    @font-face {
+      font-family: "Urbanist-b2e50ec4ad0ca523 fallback: Arial Bold";
+      src: local("Arial Bold");
+      font-display: swap;
+      font-weight: 700;
+      font-style: italic;
+      size-adjust: 92.9204%;
+      ascent-override: 102.238%;
+      descent-override: 26.9047%;
+      line-gap-override: 0%;
+    }
+
+    @font-face {
+      font-family: "Urbanist-b2e50ec4ad0ca523 fallback: Arial";
+      src: local("Arial");
+      font-display: swap;
+      font-weight: 500;
+      font-style: normal;
+      size-adjust: 100.0447%;
+      ascent-override: 94.9576%;
+      descent-override: 24.9888%;
+      line-gap-override: 0%;
+    }
+
+    @font-face {
+      font-family: "Urbanist-b2e50ec4ad0ca523 fallback: Arial Bold";
+      src: local("Arial Bold");
+      font-display: swap;
+      font-weight: 700;
+      font-style: normal;
+      size-adjust: 92.9204%;
+      ascent-override: 102.238%;
+      descent-override: 26.9047%;
+      line-gap-override: 0%;
+    }
+
+    :root {
+      --font-secondary: Urbanist-b2e50ec4ad0ca523, "Urbanist-b2e50ec4ad0ca523 fallback: Arial", "Urbanist-b2e50ec4ad0ca523 fallback: Arial Bold", sans-serif;
+    }
+  </style>
+
+  <link rel="preload" href="/_astro/fonts/c99d5c25d473f179.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/_astro/fonts/c377b20c08689b67.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+  <title>
+    Warum individuelle Software für Unternehmen immer wichtiger wird | JKB Software
+  </title>
+
+  <meta name="description" content="Warum Standardsoftware nicht immer ausreicht und wann individuelle Softwarelösungen für Unternehmen sinnvoll sind.">
+
+  <!-- View Transitions removed to avoid conflicts with GSAP/Lenis/Swiper -->
+
+  <meta name="author" content="JKB Software">
+
+  <meta property="og:title" content="Warum individuelle Software für Unternehmen immer wichtiger wird | JKB Software">
+  <meta property="og:description" content="Warum Standardsoftware nicht immer ausreicht und wann individuelle Softwarelösungen für Unternehmen sinnvoll sind.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jkb-software.com/blog/individualsoftware-unternehmen">
+  <meta property="og:image" content="https://jkb-software.com/images/blog/individualsoftware-unternehmen.png">
+
+  <meta name="twitter:title" content="Warum individuelle Software für Unternehmen immer wichtiger wird | JKB Software">
+  <meta name="twitter:description" content="Warum Standardsoftware nicht immer ausreicht und wann individuelle Softwarelösungen für Unternehmen sinnvoll sind.">
+  <meta name="twitter:image" content="https://jkb-software.com/images/blog/individualsoftware-unternehmen.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- GSAP CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+  <!-- LENIS CDN -->
+  <script defer src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+
+  <!-- Main UI interactions -->
+  <script defer src="/scripts/template-main.js"></script>
+
+  <!-- Animations -->
+  <script type="module" src="/scripts/animations.js"></script>
+
+  <link rel="stylesheet" href="/_astro/Base.BqK6QI2t.css">
+
+  <style>
+    .jkb-dropdown {
+      position: relative;
+    }
+
+    .jkb-dropdown-menu {
+      display: none;
+      list-style: none;
+      margin: 0;
+      padding: 8px 0;
+      min-width: 200px;
+    }
+
+    @media (min-width: 1024px) {
+      .jkb-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(20,20,25,.95);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 16px;
+        padding: 10px;
+        z-index: 100;
+      }
+
+      .jkb-dropdown:hover .jkb-dropdown-menu {
+        display: block;
+      }
+
+      .jkb-dropdown::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 12px;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .jkb-dropdown .jkb-dropdown-menu {
+        display: block;
+        padding-left: 16px;
+      }
+    }
+
+    .jkb-dropdown-menu a {
+      display: block;
+      padding: 8px 14px;
+      color: inherit;
+      text-decoration: none;
+      border-radius: 10px;
+      white-space: nowrap;
+      font-size: .95em;
+    }
+
+    .jkb-dropdown-menu a:hover {
+      background: rgba(255,255,255,.08);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header z-50 w-full transition-all duration-300 fixed top-0">
+  <nav class="navbar container relative z-30">
+
+    <!-- Logo -->
+    <div class="order-0">
+      <a href="/" class="navbar-brand inline-block">
+        <img
+          src="/Assets/logoohnehintergund.png"
+          alt="JKB Software"
+          loading="lazy"
+          decoding="async"
+          style="height:45px;width:auto"
+          class="inline-block"
+        >
+      </a>
+    </div>
+
+    <!-- Navbar toggler -->
+    <input id="nav-toggle" type="checkbox" class="peer hidden">
+
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-white lg:order-1 bg-dark/10 backdrop-blur-lg size-12 rounded-xl justify-center"
+    >
+      <svg id="show-button" class="h-6 fill-current block peer-checked:hidden" viewBox="0 0 20 20">
+        <title>Menü öffnen</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+
+      <svg id="hide-button" class="h-6 fill-current hidden peer-checked:block" viewBox="0 0 20 20">
+        <title>Menü schließen</title>
+        <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+
+    <!-- Navigation -->
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden peer-checked:flex peer-checked:flex-col lg:flex w-full py-6 max-lg:mt-5 lg:order-1 lg:w-auto lg:gap-x-2 lg:py-0 xl:gap-x-8 bg-light/90 lg:bg-dark/30 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-6"
+    >
+
+      <li class="nav-item">
+        <a href="/features" class="nav-link block false">
+          Warum JKB?
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/pricing" class="nav-link block false">
+          Preise
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/blog" class="nav-link block false">
+          Blog
+        </a>
+      </li>
+
+      <li class="nav-item jkb-dropdown">
+        <a href="#" class="nav-link block false" onclick="return false">
+          Produkte
+          <svg
+            style="display:inline-block;width:10px;height:10px;margin-left:2px"
+            viewBox="0 0 10 6"
+            fill="none"
+          >
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+
+        <ul class="jkb-dropdown-menu">
+          <li>
+            <a href="/products/jkb-grounds.html">JKB Grounds</a>
+          </li>
+          <li>
+            <a href="/jkb-hotels.html">JKB Hotels</a>
+          </li>
+          <li>
+            <a href="/jkb-cloud.html">JKB Cloud</a>
+          </li>
+          <li>
+            <a href="/jkb-office-custom.html">JKB Office Custom</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a href="/case-study" class="nav-link block false">
+          Referenzen
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/contact" class="nav-link block false">
+          Kontakt
+        </a>
+      </li>
+
+      <li class="pt-4 inline-block lg:hidden">
+        <a class="btn-outline btn-sm" href="/contact">
+          Kontakt aufnehmen
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      <a class="btn btn-primary hidden lg:inline-block" href="/contact">
+        Kontakt aufnehmen
+      </a>
+    </div>
+
+  </nav>
+
+  <!-- Expanded menu background -->
+  <div class="bg-dark/50 backdrop-blur-sm -z-10" id="nav-menu-bg"></div>
+</header>
+
+
+<main id="main-content" class="overflow-x-hidden md:overflow-x-auto">
+
+  <!-- BLOG HERO -->
+  <section class="section-ph relative pb-10 lg:pb-14">
+
+    <div class="container">
+
+      <div class="mx-auto max-w-246.25 text-center">
+
+        <h1 class="hasHighlight mb-8 text-h4-sm md:text-h1 leading-[1.1]">
+          Warum individuelle Software für Unternehmen immer wichtiger wird
+        </h1>
+
+        <div class="overflow-hidden rounded-2xl border border-white/10">
+
+          <img
+            src="/images/blog/individualsoftware-unternehmen.png"
+            alt="Individuelle Softwareentwicklung für Unternehmen"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="600"
+            class="h-full w-full object-cover"
+          >
+
+        </div>
+
+        <div class="mx-auto mt-6 flex max-w-140 flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm md:text-base text-text">
+
+          <span class="inline-flex items-center gap-2">
+            JKB Software
+          </span>
+
+          <span class="inline-flex items-center gap-2">
+            <i class="fa-regular fa-calendar-days text-xs" aria-hidden="true"></i>
+            20. Oktober 2026
+          </span>
+
+          <span class="inline-flex items-center gap-2">
+            <i class="fa-regular fa-clock text-xs" aria-hidden="true"></i>
+            4 Min. Lesezeit
+          </span>
+
+        </div>
+
+        <hr class="mt-8 h-px border-0 bg-linear-to-r from-transparent via-white/15 to-transparent">
+
+      </div>
+
+    </div>
+
+    <div class="absolute inset-0 h-full w-full overflow-hidden -z-10">
+      <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
+    </div>
+
+    <div
+      class="absolute left-1/2 top-0 -z-20 size-170 -translate-x-1/2 -translate-y-1/2 blur-2xl xl:size-300"
+      style="background: radial-gradient(circle, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 78%, transparent) 20%, transparent 70%);"
+    ></div>
+
+    <div class="absolute bottom-0 left-0 h-40 w-full -z-10 bg-linear-180 from-transparent to-body"></div>
+
+  </section>
+
+
+  <!-- BLOG CONTENT -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="mx-auto flex max-w-322.5 flex-col gap-20">
+
+        <article>
+
+          <div class="content">
+
+            <p>
+              Unternehmen arbeiten heute digitaler als je zuvor. Kundendaten werden digital verwaltet, Aufträge über Software organisiert, Termine online gebucht und interne Prozesse zunehmend automatisiert. Gleichzeitig wächst die Anzahl der verfügbaren Softwarelösungen stetig.
+            </p>
+
+            <p>
+              Doch mehr Software bedeutet nicht automatisch bessere Prozesse. Häufig entsteht genau das Gegenteil: Unternehmen arbeiten mit vielen unterschiedlichen Programmen, übertragen Daten manuell zwischen Systemen und passen ihre Arbeitsabläufe an die Möglichkeiten einer Software an.
+            </p>
+
+            <p>
+              Genau hier wird individuelle Softwareentwicklung interessant.
+            </p>
+
+
+            <h2 id="standardsoftware">
+              Standardsoftware hat Grenzen
+            </h2>
+
+            <p>
+              Standardsoftware ist für viele Unternehmen ein sinnvoller Einstieg. Sie ist schnell verfügbar, vergleichsweise einfach einzurichten und deckt typische Anforderungen bereits ab.
+            </p>
+
+            <p>
+              Allerdings verfolgt jedes Unternehmen seine eigenen Prozesse. Was bei einem Betrieb hervorragend funktioniert, kann für einen anderen unnötig kompliziert sein.
+            </p>
+
+            <p>
+              Sobald eine Standardlösung wichtige Abläufe nicht mehr abbilden kann, entstehen häufig zusätzliche Workarounds. Mitarbeiter führen Excel-Listen, kopieren Daten zwischen Anwendungen oder nutzen mehrere Systeme parallel.
+            </p>
+
+            <p>
+              Das kostet Zeit und erhöht gleichzeitig die Gefahr von Fehlern.
+            </p>
+
+
+            <h2 id="individuelle-software">
+              Was individuelle Software anders macht
+            </h2>
+
+            <p>
+              Eine individuelle Softwarelösung wird nicht für möglichst viele Unternehmen entwickelt, sondern für einen konkreten Anwendungsfall.
+            </p>
+
+            <p>
+              Dadurch können Funktionen, Benutzerrollen, Prozesse und Schnittstellen genau auf die Anforderungen eines Unternehmens abgestimmt werden.
+            </p>
+
+            <h3 id="vorteile">
+              Typische Vorteile individueller Software
+            </h3>
+
+            <ul>
+              <li>Automatisierung wiederkehrender Arbeitsabläufe</li>
+              <li>Weniger manuelle Dateneingaben</li>
+              <li>Individuelle Benutzerrollen und Berechtigungen</li>
+              <li>Verbindung verschiedener Systeme über Schnittstellen</li>
+              <li>Zentrale Verwaltung wichtiger Unternehmensdaten</li>
+              <li>Individuelle Web-Apps und Plattformen</li>
+              <li>Skalierbare Lösungen für wachsende Unternehmen</li>
+            </ul>
+
+
+            <h2 id="wann-lohnt-sich">
+              Wann lohnt sich eine eigene Software?
+            </h2>
+
+            <p>
+              Nicht jedes Unternehmen benötigt eine komplett eigene Softwareplattform. Entscheidend ist vielmehr, wie stark die vorhandenen Systeme die eigenen Prozesse bereits unterstützen.
+            </p>
+
+            <p>
+              Eine individuelle Lösung kann besonders sinnvoll sein, wenn bestimmte Aufgaben jeden Tag manuell durchgeführt werden müssen oder wenn mehrere Systeme miteinander verbunden werden sollen.
+            </p>
+
+            <p>
+              Auch Unternehmen mit speziellen Geschäftsmodellen profitieren häufig von eigener Software. Denn wenn eine Standardlösung die Besonderheiten des eigenen Geschäfts nicht abbilden kann, muss sich normalerweise das Unternehmen an die Software anpassen.
+            </p>
+
+            <p>
+              Bei einer individuellen Lösung funktioniert es umgekehrt: Die Software wird an den Prozess angepasst.
+            </p>
+
+
+            <h2 id="automatisierung">
+              Digitalisierung bedeutet mehr als Papier ersetzen
+            </h2>
+
+            <p>
+              Digitalisierung wird häufig darauf reduziert, analoge Prozesse digital abzubilden. Eine Excel-Liste wird durch eine Online-Tabelle ersetzt oder ein Papierformular durch ein PDF.
+            </p>
+
+            <p>
+              Der größere Mehrwert entsteht jedoch dort, wo Prozesse automatisiert und miteinander verbunden werden.
+            </p>
+
+            <p>
+              Beispielsweise kann eine Anfrage automatisch erfasst, einem Mitarbeiter zugewiesen, verarbeitet und anschließend dokumentiert werden. Informationen müssen dadurch nicht an mehreren Stellen manuell eingetragen werden.
+            </p>
+
+            <p>
+              Genau solche Prozesse können durch individuell entwickelte Software deutlich effizienter werden.
+            </p>
+
+
+            <h2 id="entwicklung">
+              Von der Idee zur fertigen Software
+            </h2>
+
+            <p>
+              Gute Softwareentwicklung beginnt nicht mit dem Programmieren. Zunächst muss verstanden werden, welches Problem tatsächlich gelöst werden soll.
+            </p>
+
+            <p>
+              Welche Prozesse funktionieren bereits gut? Wo entstehen unnötige Arbeitsschritte? Welche Informationen müssen miteinander verbunden werden? Welche Benutzer benötigen welche Funktionen?
+            </p>
+
+            <p>
+              Erst auf dieser Grundlage entsteht ein technisches Konzept. Daraus kann anschließend eine Web-App, eine Unternehmenssoftware, eine Plattform oder ein individuelles SaaS-Produkt entwickelt werden.
+            </p>
+
+
+            <blockquote>
+              <p>
+                Gute Software passt sich dem Unternehmen an – nicht das Unternehmen der Software.
+              </p>
+            </blockquote>
+
+
+            <h2 id="jkb-software">
+              Individuelle Softwareentwicklung mit JKB Software
+            </h2>
+
+            <p>
+              JKB Software entwickelt digitale Lösungen für Unternehmen, die ihre Prozesse nicht mit Standardsoftware abbilden können oder wollen.
+            </p>
+
+            <p>
+              Dabei geht es nicht darum, möglichst viele Funktionen in eine Anwendung zu packen. Entscheidend ist, eine Software zu entwickeln, die einen konkreten Prozess verbessert und für die Nutzer einfach funktioniert.
+            </p>
+
+            <p>
+              Von individuellen Webanwendungen über digitale Plattformen bis hin zu eigenen Softwareprodukten entstehen Lösungen, die auf den jeweiligen Anwendungsfall zugeschnitten sind.
+            </p>
+
+            <p>
+              JKB Software entwickelt aus Hohenfurch digitale Lösungen für Unternehmen, die ihre Prozesse effizienter, moderner und skalierbarer gestalten möchten.
+            </p>
+
+
+            <h2 id="fazit">
+              Fazit
+            </h2>
+
+            <p>
+              Standardsoftware wird auch in Zukunft für viele Unternehmen die richtige Lösung sein. Wenn Prozesse jedoch immer komplexer werden oder mehrere Systeme miteinander verbunden werden müssen, kann individuelle Software einen entscheidenden Unterschied machen.
+            </p>
+
+            <p>
+              Die wichtigste Frage lautet deshalb nicht: „Welche Software kann ich kaufen?“
+            </p>
+
+            <p>
+              Sondern: „Welche Software würde meinen Prozess wirklich verbessern?“
+            </p>
+
+            <p>
+              Genau dort beginnt individuelle Softwareentwicklung.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- Share -->
+        <div class="flex flex-wrap items-center gap-6 md:gap-8">
+
+          <h4 class="text-h5 md:text-h4 mb-0">
+            Teilen:
+          </h4>
+
+          <ul class="social-icons">
+
+            <li class="inline-block">
+              <a
+                aria-label="Facebook teilen"
+                href="https://facebook.com/sharer/sharer.php?u=https://jkb-software.com/blog/individualsoftware-unternehmen"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z"></path>
+                </svg>
+              </a>
+            </li>
+
+            <li class="inline-block">
+              <a
+                aria-label="X teilen"
+                href="https://twitter.com/intent/tweet/?text=Warum individuelle Software für Unternehmen immer wichtiger wird&url=https://jkb-software.com/blog/individualsoftware-unternehmen"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M496 109.5a201.8 201.8 0 0 1-56.55 15.3 97.51 97.51 0 0 0 43.33-53.6 197.74 197.74 0 0 1-62.56 23.5A99.14 99.14 0 0 0 348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 0 0 2.54 22.1 280.7 280.7 0 0 1-203-101.3A95.69 95.69 0 0 0 36 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0 1 35.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 0 1-25.94 3.4 94.38 94.38 0 0 1-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0 1 39.5 405.6a203 203 0 0 1-23.5-1.4A278.68 278.68 0 0 0 166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 0 0 496 109.5z"></path>
+                </svg>
+              </a>
+            </li>
+
+            <li class="inline-block">
+              <a
+                aria-label="LinkedIn teilen"
+                href="https://www.linkedin.com/shareArticle?mini=true&url=https://jkb-software.com/blog/individualsoftware-unternehmen&title=Warum individuelle Software für Unternehmen immer wichtiger wird&summary=Warum Standardsoftware nicht immer ausreicht und wann individuelle Softwarelösungen sinnvoll sind.&source=https://jkb-software.com"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"></path>
+                </svg>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MORE ARTICLES -->
+  <section class="section pb-34">
+
+    <div class="container relative isolate">
+
+      <div class="mb-12 text-center">
+        <h2 class="text-h3-sm md:text-h2 capitalize">
+          Weitere Artikel
+        </h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+        <!-- Article 1 -->
+        <article class="flex flex-col justify-between">
+
+          <img
+            src="/_astro/featured-cover.BwKdQ4oL_1W12sQ.webp"
+            alt="Digitalisierung von Unternehmen"
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="310"
+            class="w-full min-h-77.5 object-cover rounded-2xl mb-2.5"
+          >
+
+          <div class="rounded-2xl overflow-hidden bg-text-light/5 p-6 h-full flex flex-col justify-between">
+
+            <div>
+
+              <a href="/blog/digitalisierung-unternehmen" class="hover:text-primary! hover:underline">
+
+                <h3 class="mb-3 text-h5-sm text-white">
+                  Digitalisierung im Unternehmen: Wo lohnt sich der Einstieg?
+                </h3>
+
+              </a>
+
+              <p class="mb-5 text-sm leading-6 text-text">
+                Digitalisierung muss nicht kompliziert sein. Diese Bereiche bieten Unternehmen besonders großes Potenzial für digitale Prozesse.
+              </p>
+
+            </div>
+
+            <div>
+
+              <hr class="mb-4 h-px border-0 bg-linear-to-r from-transparent via-white/10 to-transparent">
+
+              <div class="flex items-center justify-between gap-2 text-sm text-text">
+
+                <span class="inline-flex items-center gap-2">
+                  JKB Software
+                </span>
+
+                <span class="inline-flex items-center gap-2">
+                  <i class="fa-regular fa-clock text-xs" aria-hidden="true"></i>
+                  4 Min.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Article 2 -->
+        <article class="flex flex-col justify-between">
+
+          <img
+            src="/_astro/post-2.DYL8l9Xd_V7eom.webp"
+            alt="Web Apps für Unternehmen"
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="310"
+            class="w-full min-h-77.5 object-cover rounded-2xl mb-2.5"
+          >
+
+          <div class="rounded-2xl overflow-hidden bg-text-light/5 p-6 h-full flex flex-col justify-between">
+
+            <div>
+
+              <a href="/blog/web-apps-unternehmen" class="hover:text-primary! hover:underline">
+
+                <h3 class="mb-3 text-h5-sm text-white">
+                  Web-Apps für Unternehmen: Was können moderne Anwendungen leisten?
+                </h3>
+
+              </a>
+
+              <p class="mb-5 text-sm leading-6 text-text">
+                Warum browserbasierte Anwendungen für Unternehmen immer interessanter werden und welche Möglichkeiten sie bieten.
+              </p>
+
+            </div>
+
+            <div>
+
+              <hr class="mb-4 h-px border-0 bg-linear-to-r from-transparent via-white/10 to-transparent">
+
+              <div class="flex items-center justify-between gap-2 text-sm text-text">
+
+                <span class="inline-flex items-center gap-2">
+                  JKB Software
+                </span>
+
+                <span class="inline-flex items-center gap-2">
+                  <i class="fa-regular fa-clock text-xs" aria-hidden="true"></i>
+                  5 Min.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Article 3 -->
+        <article class="flex flex-col justify-between">
+
+          <img
+            src="/_astro/post-3.Bxa11EbD_HKNY.webp"
+            alt="Software Automatisierung"
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="310"
+            class="w-full min-h-77.5 object-cover rounded-2xl mb-2.5"
+          >
+
+          <div class="rounded-2xl overflow-hidden bg-text-light/5 p-6 h-full flex flex-col justify-between">
+
+            <div>
+
+              <a href="/blog/software-automatisierung" class="hover:text-primary! hover:underline">
+
+                <h3 class="mb-3 text-h5-sm text-white">
+                  Prozesse automatisieren: Wie Software Zeit im Unternehmen spart
+                </h3>
+
+              </a>
+
+              <p class="mb-5 text-sm leading-6 text-text">
+                Von manuellen Arbeitsschritten bis zu automatisierten Workflows: So kann Software wiederkehrende Aufgaben übernehmen.
+              </p>
+
+            </div>
+
+            <div>
+
+              <hr class="mb-4 h-px border-0 bg-linear-to-r from-transparent via-white/10 to-transparent">
+
+              <div class="flex items-center justify-between gap-2 text-sm text-text">
+
+                <span class="inline-flex items-center gap-2">
+                  JKB Software
+                </span>
+
+                <span class="inline-flex items-center gap-2">
+                  <i class="fa-regular fa-clock text-xs" aria-hidden="true"></i>
+                  4 Min.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <div class="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-310.5 -translate-x-1/2 -translate-y-1/3 rounded-full bg-radial from-primary/16 from-0% to-transparent to-70% blur-2xl"></div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="section pb-0 relative overflow-hidden">
+
+  <div class="container pb-10">
+
+    <div class="flex lg:justify-between flex-wrap gap-x-10 gap-y-10">
+
+      <!-- Column 1 -->
+      <div class="max-w-95 mb-20 text-lg text-text">
+
+        <img
+          src="/Assets/logoohnehintergund.png"
+          alt="JKB Software"
+          loading="lazy"
+          decoding="async"
+          width="156"
+          height="50"
+          class="h-12.5"
+        >
+
+        <p class="mt-6">
+          Digitale Softwarelösungen für Unternehmen, die ihre Prozesse modernisieren und effizienter gestalten möchten.
+        </p>
+
+        <a class="link mt-6 inline-block underline" href="/contact">
+          Kontakt aufnehmen
+        </a>
+
+      </div>
+
+
+      <!-- Column 2 -->
+      <div>
+
+        <h3 class="footer-label">
+          Navigation
+        </h3>
+
+        <ul>
+
+          <li class="mb-5">
+            <a href="/" class="footer-link">
+              Startseite
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/features" class="footer-link">
+              Warum JKB?
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/pricing" class="footer-link">
+              Preise
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/blog" class="footer-link">
+              Blog
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/contact" class="footer-link">
+              Kontakt
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Column 3 -->
+      <div>
+
+        <h3 class="footer-label">
+          Produkte
+        </h3>
+
+        <ul>
+
+          <li class="mb-5">
+            <a href="/products/jkb-grounds.html" class="footer-link">
+              JKB Grounds
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/jkb-hotels.html" class="footer-link">
+              JKB Hotels
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/jkb-cloud.html" class="footer-link">
+              JKB Cloud
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/jkb-office-custom.html" class="footer-link">
+              JKB Office Custom
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/case-study" class="footer-link">
+              Referenzen
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Column 4 -->
+      <div>
+
+        <h3 class="footer-label">
+          Rechtliches
+        </h3>
+
+        <ul>
+
+          <li class="mb-5">
+            <a href="/privacy-policy" class="footer-link">
+              Datenschutz
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/term-and-condition" class="footer-link">
+              AGB
+            </a>
+          </li>
+
+          <li class="mb-5">
+            <a href="/impressum" class="footer-link">
+              Impressum
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Bottom Area -->
+  <hr class="h-px bg-linear-to-r from-transparent from-25% via-white/50 to-75% to-transparent border-0">
+
+  <div class="container py-7">
+
+    <div class="flex justify-between lg:items-center flex-col lg:flex-row gap-y-6 w-full">
+
+      <p class="text-base text-text">
+        Copyright &copy; 2026
+        <strong>
+          <a href="/">
+            JKB Software
+          </a>
+        </strong>
+        Alle Rechte vorbehalten
+      </p>
+
+      <ul class="social-icons lg:ml-auto">
+
+        <li>
+          <a
+            aria-label="Instagram"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <span class="sr-only">
+              Instagram
+            </span>
+
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="inline-block" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a
+            aria-label="YouTube"
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <span class="sr-only">
+              YouTube
+            </span>
+
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="inline-block" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.79 64 288 64 288 64S117.21 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.21 448 288 448 288 448s170.79 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+            </svg>
+
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="absolute bottom-0 left-1/2 size-280 blur-2xl -translate-x-1/2 translate-y-1/2 -z-10"
+    style="background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 30%, transparent) 0%, transparent 80%);"
+  ></div>
+
+</footer>
+
+</body>
+</html>
