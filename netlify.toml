@@ -1,18 +1,10 @@
 # Netlify configuration for JKB Software Website
 
-# Form settings
 [build]
   publish = "."
 
-# Form notifications - simplified and working configuration
-[[forms]]
-  name = "kontakt"
-  
-  [[forms.notifications]]
-    type = "email"
-    event = "submission"
-    to = "vertrieb@jkb-software.com"
-    subject = "Neue Kontaktanfrage von JKB Website"
+# Hinweis: Formular-Benachrichtigungen werden im Netlify-Dashboard
+# konfiguriert (Forms → Notifications), nicht in dieser Datei.
 
 # Redirects
 [[redirects]]
