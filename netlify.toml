@@ -11,7 +11,7 @@
   [[forms.notifications]]
     type = "email"
     event = "submission"
-    to = "office@fj-marketing.com"
+    to = "vertrieb@jkb-software.com"
     subject = "Neue Kontaktanfrage von JKB Website"
 
 # Redirects

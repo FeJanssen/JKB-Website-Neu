@@ -1,109 +1,806 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EDITH – Unternehmens-KI | JKB Software</title>
-<meta name="robots" content="noindex">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
-    background: #0a0a0f;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-  }
-  .glow {
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    filter: blur(140px);
-    opacity: .35;
-    pointer-events: none;
-  }
-  .glow-1 { background: #6366f1; top: -200px; left: -150px; }
-  .glow-2 { background: #06b6d4; bottom: -250px; right: -150px; animation: pulse 6s ease-in-out infinite alternate; }
-  @keyframes pulse { from { opacity:.2; } to { opacity:.45; } }
-  .card {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 64px 48px;
-    max-width: 560px;
-    margin: 20px;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 28px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-  .badge {
-    display: inline-block;
-    padding: 6px 18px;
-    border-radius: 999px;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #a5b4fc;
-    background: rgba(99,102,241,.12);
-    border: 1px solid rgba(99,102,241,.35);
-    margin-bottom: 28px;
-  }
-  h1 {
-    font-size: clamp(2.2rem, 6vw, 3.4rem);
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 18px;
-    background: linear-gradient(135deg, #fff 30%, #818cf8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  p { color: rgba(255,255,255,.65); font-size: 1.05rem; line-height: 1.7; margin-bottom: 36px; }
-  .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .btn {
-    display: inline-block;
-    padding: 14px 30px;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: .95rem;
-    text-decoration: none;
-    transition: transform .2s, box-shadow .2s;
-  }
-  .btn-primary {
-    background: linear-gradient(135deg, #6366f1, #06b6d4);
-    color: #fff;
-    box-shadow: 0 8px 28px rgba(99,102,241,.35);
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(99,102,241,.5); }
-  .btn-ghost {
-    color: rgba(255,255,255,.8);
-    border: 1px solid rgba(255,255,255,.2);
-  }
-  .btn-ghost:hover { background: rgba(255,255,255,.07); }
-  .footer-note { position: absolute; bottom: 28px; z-index: 1; color: rgba(255,255,255,.35); font-size: .85rem; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDITH – Ihre Unternehmens-KI | JKB Software</title>
+  <!--
+  TemplateMo 622 EDITH
+  https://templatemo.com/tm-622-edith
+  Free for personal and commercial use
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/edith-assets/templatemo-622-clearwave.css" />
 <link rel="shortcut icon" type="image/png" href="/Assets/logoohnehintergund.png">
 </head>
 <body>
-  <div class="glow glow-1"></div>
-  <div class="glow glow-2"></div>
-  <div class="card">
-    <span class="badge">Unternehmens-KI</span>
-    <h1>EDITH</h1>
-    <p>EDITH ist unsere selbst entwickelte Unternehmens-KI mit eigener Wissensdatenbank und direkter ERP-Anbindung. Erfahren Sie, was EDITH für Ihr Unternehmen leisten kann.</p>
-    <div class="actions">
-      <a class="btn btn-primary" href="/contact">Jetzt informieren lassen</a>
-      <a class="btn btn-ghost" href="/">Zur Startseite</a>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <a href="#screens">Lösung</a>
+    <a href="#features">Leistungen</a>
+    
+    <a href="#testimonials">Stimmen</a>
+    <a href="#integrations">Integrationen</a>
+    <a href="#faq">FAQ</a>
+    <a href="/contact" class="mobile-cta btn-primary">Jetzt anfragen</a>
+  </div>
+
+  <!-- ── 1. NAV ── -->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">ED<span>ITH</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#screens">Lösung</a></li>
+        <li><a href="#features">Leistungen</a></li>
+        
+        <li><a href="#testimonials">Stimmen</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/contact" class="btn-ghost">Kontakt</a>
+        <a href="/contact" class="btn-primary">Jetzt anfragen</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── 2. HERO ── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge reveal">
+            <div class="hero-badge-dot">✦</div>
+            <span><strong>Maßgeschneiderte KI</strong> für Ihr Unternehmen</span>
+          </div>
+          <h1 class="hero-title reveal reveal-delay-1">
+            Claude – angepasst<br><em>an Ihr Unternehmen.</em>
+          </h1>
+          <p class="hero-sub reveal reveal-delay-2">
+            Wir passen Claude mit Konnektoren und Code an Ihr Unternehmen an – verbunden mit MS365, ERP-Systemen und Ihren Wissensdatenbanken.
+          </p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a href="/contact" class="btn-primary-lg">
+              Jetzt Beratung anfragen
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="#screens" class="btn-outline-lg">
+              <span>▶</span> So funktioniert's
+            </a>
+          </div>
+          <div class="hero-trust reveal reveal-delay-4">
+            <div class="trust-item">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              DSGVO-konform
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              Sichere Datenhaltung
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Individuelle Integration
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-delay-2">
+          <div class="hero-dashboard">
+            <div class="dashboard-bar">
+              <div class="db-dot"></div><div class="db-dot"></div><div class="db-dot"></div>
+            </div>
+            <div class="dashboard-body">
+              <div class="db-header">
+                <div class="db-title">EDITH Insights</div>
+                <div class="db-tag">Live</div>
+              </div>
+              <div class="db-chart">
+                <div class="db-bar" style="height:35%"></div>
+                <div class="db-bar" style="height:55%"></div>
+                <div class="db-bar" style="height:42%"></div>
+                <div class="db-bar active" style="height:75%"></div>
+                <div class="db-bar" style="height:60%"></div>
+                <div class="db-bar active" style="height:88%"></div>
+                <div class="db-bar" style="height:70%"></div>
+                <div class="db-bar active" style="height:92%"></div>
+              </div>
+              <div class="db-stats">
+                <div class="db-stat">
+                  <div class="db-stat-val">94<span style="font-size:.9rem;color:var(--accent)">%</span></div>
+                  <div class="db-stat-label">Antwortgenauigkeit</div>
+                  <div class="db-stat-change">+12%</div>
+                </div>
+                <div class="db-stat">
+                  <div class="db-stat-val">2.4<span style="font-size:.9rem;color:var(--accent)">k</span></div>
+                  <div class="db-stat-label">Indexierte Dokumente</div>
+                  <div class="db-stat-change">+8%</div>
+                </div>
+                <div class="db-stat">
+                  <div class="db-stat-val">18<span style="font-size:.9rem;color:var(--accent)">h</span></div>
+                  <div class="db-stat-label">Gespart / Woche</div>
+                  <div class="db-stat-change">+24%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-float-badge">
+            <div class="float-badge-icon">✦</div>
+            <div class="float-badge-text">
+              <strong>Neue Integration</strong>
+              <span>MS365 verbunden · gerade eben</span>
+            </div>
+          </div>
+          <div class="hero-float-badge-2">
+            <div class="float-badge-2-val">↑ 34%</div>
+            <div class="float-badge-2-label">Schnellere Antworten</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. LOGO TICKER ── -->
+  <div class="ticker-section">
+    <div class="ticker-label">EDITH verbindet Claude u. a. mit</div>
+    <div class="ticker-track-wrap">
+      <div class="ticker-track">
+        <!-- Set 1 -->
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>Microsoft 365</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>SharePoint</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><polygon points="12,2 22,20 2,20"/></svg></div>MS Teams</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M4 4h16v12H4z M8 20h8"/></svg></div>Outlook</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>SAP</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>DATEV</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>Confluence</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>Notion</div>
+        <div class="ticker-dot"></div>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>Microsoft 365</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>SharePoint</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><polygon points="12,2 22,20 2,20"/></svg></div>MS Teams</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M4 4h16v12H4z M8 20h8"/></svg></div>Outlook</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>SAP</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>DATEV</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>Confluence</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>Notion</div>
+        <div class="ticker-dot"></div>
+      </div>
     </div>
   </div>
-  <div class="footer-note">© JKB Software · jkb-software.com</div>
+
+  <!-- ── 5. 3D PHONE CAROUSEL ── -->
+  <section class="carousel-section" id="screens">
+    <div class="container">
+      <div class="carousel-header">
+        <div class="section-label reveal">Mobile App</div>
+        <h2 class="section-title reveal reveal-delay-1">Ihre Unternehmens-KI,<br><em>immer dabei</em></h2>
+        <p class="section-sub reveal reveal-delay-2">EDITH bringt Ihr gesamtes Firmenwissen auf jedes Gerät – fragen Sie Ihre KI unterwegs, im Meeting oder am Schreibtisch.</p>
+      </div>
+    </div>
+    <div class="carousel-zoom">
+      <button class="zoom-btn" id="zoomOut" aria-label="Zoom out">−</button>
+      <div class="zoom-pips" id="zoomPips"></div>
+      <button class="zoom-btn" id="zoomIn" aria-label="Zoom in">+</button>
+    </div>
+
+    <div class="carousel-stage" id="carouselStage">
+      <div class="carousel-track" id="carouselTrack">
+
+        <!-- Phone screens: 5 different screen designs + extras for looping -->
+        <!-- We will render 7 cards and cycle positions -->
+
+        <div class="phone-card" data-pos="left2" data-index="0">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <img src="/edith-assets/images/1.png" alt="App screen 1" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+
+        <div class="phone-card" data-pos="left1" data-index="1">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <img src="/edith-assets/images/2.png" alt="App screen 2" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+
+        <div class="phone-card" data-pos="center" data-index="2">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <img src="/edith-assets/images/3.png" alt="App screen 3" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+
+        <div class="phone-card" data-pos="right1" data-index="3">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <img src="/edith-assets/images/4.png" alt="App screen 4" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+
+        <div class="phone-card" data-pos="right2" data-index="4">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <img src="/edith-assets/images/5.png" alt="App screen 5" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:24px;width:100%;margin-top:48px;">
+      <button class="carousel-btn" id="carouselPrev" aria-label="Previous screen">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" id="carouselNext" aria-label="Next screen">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── 4. FEATURES ── -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="features-header">
+        <div class="section-label reveal">Unsere Leistungen</div>
+        <h2 class="section-title reveal reveal-delay-1">KI, die <em>Ihr Unternehmen</em><br>wirklich kennt</h2>
+        <p class="section-sub reveal reveal-delay-2">Wir passen Claude mit Konnektoren und individueller Entwicklung an Ihre Systeme an – von MS365 über ERP bis zur Wissensdatenbank.</p>
+      </div>
+
+      <!-- Feature 1 -->
+      <div class="feature-row">
+        <div class="feature-content reveal">
+          <div class="feature-number">01 — Konnektoren &amp; Integrationen</div>
+          <h3 class="feature-title">Claude, verbunden mit Ihren Systemen</h3>
+          <p class="feature-desc">Wir verbinden Claude direkt mit Microsoft 365, Ihrem ERP-System und weiteren Tools. Ihre KI greift sicher auf echte Unternehmensdaten zu – ohne Copy &amp; Paste.</p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Anbindung an Microsoft 365 (Outlook, Teams, SharePoint)</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>ERP-Integration (z. B. SAP, DATEV &amp; Co.)</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Rollenbasierte Zugriffsrechte &amp; Berechtigungen</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-row">
+              <div class="fv-card">
+                <div class="fv-card-label">Bearbeitete Anfragen</div>
+                <div class="fv-card-val">1.240</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:72%"></div></div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">Indexierte Dokumente</div>
+                <div class="fv-card-val">12.481</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:88%"></div></div>
+              </div>
+            </div>
+            <div class="fv-card">
+              <div class="fv-card-label">Letzte Aktivität</div>
+              <div class="fv-list" style="margin-top:8px">
+                <div class="fv-list-item"><span class="fv-list-name">MS365 synchronisiert</span><span class="fv-pill green">Fertig</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">ERP-Abgleich läuft</span><span class="fv-pill blue">Aktiv</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Wissensindex-Update</span><span class="fv-pill dim">Geplant</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-row reverse">
+        <div class="feature-content reveal">
+          <div class="feature-number">02 — Eigene Wissensdatenbank</div>
+          <h3 class="feature-title">Ihr Firmenwissen,<br><em>sofort abrufbar</em></h3>
+          <p class="feature-desc">EDITH indexiert Ihre Dokumente, Richtlinien und Prozesse. Mitarbeiter stellen Fragen in natürlicher Sprache – und erhalten Antworten aus Ihren eigenen Quellen, mit Beleg.</p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Indexierung von Dokumenten, Wikis &amp; Laufwerken</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Antworten mit Quellenangabe aus Ihren Daten</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Vollständiger Audit-Trail aller Zugriffe</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-card">
+              <div class="fv-card-label">Aktive Workflows</div>
+              <div class="fv-list" style="margin-top:8px">
+                <div class="fv-list-item"><span class="fv-list-name">Wochenbericht → Teams</span><span class="fv-pill green">Läuft</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Neue Anfrage → Vertrieb informieren</span><span class="fv-pill green">Läuft</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Rechnung fällig → Buchhaltung</span><span class="fv-pill blue">Aktiv</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Report → SharePoint</span><span class="fv-pill dim">Pausiert</span></div>
+              </div>
+            </div>
+            <div class="fv-row">
+              <div class="fv-card fv-wide">
+                <div class="fv-card-label">Gesparte Stunden / Monat</div>
+                <div class="fv-card-val">148h</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:91%"></div></div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">Workflows</div>
+                <div class="fv-card-val">24</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-row">
+        <div class="feature-content reveal">
+          <div class="feature-number">03 — Individuelle Anpassung</div>
+          <h3 class="feature-title">Maßgeschneidert<br>per <em>Code</em></h3>
+          <p class="feature-desc">Jedes Unternehmen ist anders. Wir entwickeln individuelle Konnektoren, Workflows und Automatisierungen – exakt zugeschnitten auf Ihre Prozesse.</p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Individuelle Konnektoren-Entwicklung</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Automatisierte Workflows mit Ihrer KI</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Laufende Betreuung &amp; Weiterentwicklung</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-row">
+              <div class="fv-card fv-wide">
+                <div class="fv-card-label">Jetzt online</div>
+                <div style="display:flex;gap:-4px;margin-top:6px">
+                  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);border:2px solid var(--surface);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff">A</div>
+                  <div style="width:28px;height:28px;border-radius:50%;background:var(--accent-mid);border:2px solid var(--surface);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-left:-6px">K</div>
+                  <div style="width:28px;height:28px;border-radius:50%;background:#6B5A50;border:2px solid var(--surface);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-left:-6px">M</div>
+                  <div style="width:28px;height:28px;border-radius:50%;background:var(--bg-alt);border:2px solid var(--surface);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--text-2);margin-left:-6px">+5</div>
+                </div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">Offene Aufgaben</div>
+                <div class="fv-card-val">37</div>
+              </div>
+            </div>
+            <div class="fv-card">
+              <div class="fv-card-label">Letzte Kommentare</div>
+              <div class="fv-list" style="margin-top:8px">
+                <div class="fv-list-item"><span class="fv-list-name">Alex → Konnektor aktualisiert</span><span class="fv-pill green">Erledigt</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Kim → Review angefragt</span><span class="fv-pill blue">Offen</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Maya → Freigegeben</span><span class="fv-pill green">Fertig</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. STATS ── -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="50">0</span><span class="stat-suffix">k+</span></div>
+          <div class="stat-label">Weniger Suchzeit</div>
+          <div class="stat-sublabel">Für Wissen &amp; Dokumente</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="34">0</span><span class="stat-suffix">%</span></div>
+          <div class="stat-label">Produktivitätsgewinn</div>
+          <div class="stat-sublabel">In den ersten 30 Tagen</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="99" data-decimal="9">0</span><span class="stat-suffix">%</span></div>
+          <div class="stat-label">Verfügbarkeit</div>
+          <div class="stat-sublabel">Überwacht rund um die Uhr</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="18">0</span><span class="stat-suffix">h</span></div>
+          <div class="stat-label">Gespart pro Team / Woche</div>
+          <div class="stat-sublabel">Im Durchschnitt unserer Kunden</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ── 8. TESTIMONIALS ── -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="section-label reveal">Kundenstimmen</div>
+        <h2 class="section-title reveal reveal-delay-1">Unternehmen, die <em>EDITH</em> nutzen</h2>
+        <p class="section-sub reveal reveal-delay-2">Das sagen Unternehmen, die Claude mit EDITH an ihre Systeme angebunden haben.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card tall reveal">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"Unsere Mitarbeiter finden Richtlinien und Prozesse jetzt in Sekunden statt in Stunden. EDITH beantwortet Fragen direkt aus unserer eigenen Wissensdatenbank – mit Quellenangabe. Das hat unsere interne Kommunikation spürbar entlastet."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SL</div>
+            <div>
+              <div class="author-name">Sarah Lindqvist</div>
+              <div class="author-role">Leiterin Operations · Mittelständler</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"Die Anbindung an unser ERP war der Gamechanger. Die KI kennt unsere Artikel, Kunden und Prozesse – Angebote erstellen geht jetzt doppelt so schnell."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <div class="author-name">Marcus Reyes</div>
+              <div class="author-role">Produktleiter · Handelsunternehmen</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"Die Einführung im 30-Personen-Team hat einen Nachmittag gedauert. JKB hat alles eingerichtet und geschult."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PK</div>
+            <div>
+              <div class="author-name">Priya Kapoor</div>
+              <div class="author-role">Entwicklungsleiterin · Software-Haus</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"Dank der MS365-Integration arbeitet die KI direkt mit unseren Mails, Dokumenten und Teams-Kanälen. Kein Kontextwechsel mehr."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">TW</div>
+            <div>
+              <div class="author-name">Tom Wainwright</div>
+              <div class="author-role">CFO · Produktionsbetrieb</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"Der Support liest wirklich mit: Eine Frage zu einem individuellen Konnektor war in unter zwei Stunden beantwortet."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AN</div>
+            <div>
+              <div class="author-name">Aiko Nakamura</div>
+              <div class="author-role">CTO · Dienstleister</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. INTEGRATIONS ── -->
+  <section class="integrations-section" id="integrations">
+    <div class="container">
+      <div class="integrations-header">
+        <div class="section-label reveal">Integrationen</div>
+        <h2 class="section-title reveal reveal-delay-1">Verbunden mit Ihren<br><em>bestehenden Systemen</em></h2>
+        <p class="section-sub reveal reveal-delay-2">Wir binden Claude an die Tools an, die Sie bereits nutzen – und entwickeln fehlende Konnektoren individuell.</p>
+      </div>
+      
+<style>
+.conn-count{text-align:center;margin:0 0 28px;font-weight:600;color:var(--accent);font-size:1rem;letter-spacing:.02em}
+.logo-wrap{position:relative;max-height:340px;overflow:hidden;transition:max-height .6s ease}
+.logo-wrap.expanded{max-height:3000px}
+.logo-wrap{-webkit-mask-image:linear-gradient(to bottom,black 0%,black 45%,rgba(0,0,0,.6) 65%,rgba(0,0,0,.25) 82%,transparent 100%);mask-image:linear-gradient(to bottom,black 0%,black 45%,rgba(0,0,0,.6) 65%,rgba(0,0,0,.25) 82%,transparent 100%)}
+.logo-wrap.expanded{-webkit-mask-image:none;mask-image:none}
+.logo-wrap::after{content:"";position:absolute;left:0;right:0;bottom:0;height:260px;background:linear-gradient(to bottom,rgba(248,238,232,0) 0%,rgba(248,238,232,.5) 45%,rgba(248,238,232,.85) 75%,var(--bg,#F8EEE8) 100%);pointer-events:none;transition:opacity .4s}
+.logo-wrap.expanded::after{opacity:0}
+.logo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:14px;max-width:1100px;margin:0 auto}
+.logo-tile{background:var(--surface-2,#fff);border:1px solid var(--border,rgba(36,24,18,.08));border-radius:14px;aspect-ratio:1/1;display:grid;place-items:center;padding:20px;box-shadow:var(--shadow-sm,0 2px 12px rgba(36,24,18,.06));transition:transform .2s}
+.logo-tile:hover{transform:translateY(-3px)}
+.logo-tile img{width:52px;height:52px;object-fit:contain}
+.logo-more-row{text-align:center;margin-top:26px}
+.btn-show-more{display:inline-block;padding:13px 32px;border-radius:999px;background:var(--accent,#D97757);color:#fff;font-weight:600;border:none;cursor:pointer;font-size:.95rem;transition:background .2s}
+.btn-show-more:hover{background:var(--accent-mid,#E08A64)}
+.conn-more{text-align:center;margin-top:22px;color:var(--text-2,#5C463A);font-size:1rem;font-weight:500}
+</style>
+<div class="conn-count">1126 Konnektoren</div>
+<div class="logo-wrap" id="logo-wrap">
+<div class="logo-grid">
+<div class="logo-tile" title="Google Drive"><img src="https://www.google.com/s2/favicons?domain=drive.google.com&sz=128" alt="Google Drive" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Gmail"><img src="https://www.google.com/s2/favicons?domain=gmail.com&sz=128" alt="Gmail" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Google Calendar"><img src="https://www.google.com/s2/favicons?domain=calendar.google.com&sz=128" alt="Google Calendar" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Canva"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=128" alt="Canva" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Microsoft 365"><img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=128" alt="Microsoft 365" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Notion"><img src="https://www.google.com/s2/favicons?domain=notion.so&sz=128" alt="Notion" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Figma"><img src="https://www.google.com/s2/favicons?domain=figma.com&sz=128" alt="Figma" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Slack"><img src="https://www.google.com/s2/favicons?domain=slack.com&sz=128" alt="Slack" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Atlassian"><img src="https://www.google.com/s2/favicons?domain=atlassian.com&sz=128" alt="Atlassian" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="HubSpot"><img src="https://www.google.com/s2/favicons?domain=hubspot.com&sz=128" alt="HubSpot" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Asana"><img src="https://www.google.com/s2/favicons?domain=asana.com&sz=128" alt="Asana" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Linear"><img src="https://www.google.com/s2/favicons?domain=linear.app&sz=128" alt="Linear" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="monday.com"><img src="https://www.google.com/s2/favicons?domain=monday.com&sz=128" alt="monday.com" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Intercom"><img src="https://www.google.com/s2/favicons?domain=intercom.com&sz=128" alt="Intercom" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Box"><img src="https://www.google.com/s2/favicons?domain=box.com&sz=128" alt="Box" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Adobe"><img src="https://www.google.com/s2/favicons?domain=adobe.com&sz=128" alt="Adobe" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Supabase"><img src="https://www.google.com/s2/favicons?domain=supabase.com&sz=128" alt="Supabase" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Miro"><img src="https://www.google.com/s2/favicons?domain=miro.com&sz=128" alt="Miro" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Shopify"><img src="https://www.google.com/s2/favicons?domain=shopify.com&sz=128" alt="Shopify" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Vercel"><img src="https://www.google.com/s2/favicons?domain=vercel.com&sz=128" alt="Vercel" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Zoom"><img src="https://www.google.com/s2/favicons?domain=zoom.us&sz=128" alt="Zoom" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Granola"><img src="https://www.google.com/s2/favicons?domain=granola.ai&sz=128" alt="Granola" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Spotify"><img src="https://www.google.com/s2/favicons?domain=spotify.com&sz=128" alt="Spotify" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Indeed"><img src="https://www.google.com/s2/favicons?domain=indeed.com&sz=128" alt="Indeed" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Gamma"><img src="https://www.google.com/s2/favicons?domain=gamma.app&sz=128" alt="Gamma" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Wispr Flow"><img src="https://www.google.com/s2/favicons?domain=wisprflow.ai&sz=128" alt="Wispr Flow" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Salesforce"><img src="https://www.google.com/s2/favicons?domain=salesforce.com&sz=128" alt="Salesforce" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Zapier"><img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128" alt="Zapier" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Microsoft Learn"><img src="https://www.google.com/s2/favicons?domain=learn.microsoft.com&sz=128" alt="Microsoft Learn" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="PubMed"><img src="https://www.google.com/s2/favicons?domain=pubmed.ncbi.nlm.nih.gov&sz=128" alt="PubMed" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Airtable"><img src="https://www.google.com/s2/favicons?domain=airtable.com&sz=128" alt="Airtable" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Lucid"><img src="https://www.google.com/s2/favicons?domain=lucid.co&sz=128" alt="Lucid" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="vidIQ"><img src="https://www.google.com/s2/favicons?domain=vidiq.com&sz=128" alt="vidIQ" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="ClickUp"><img src="https://www.google.com/s2/favicons?domain=clickup.com&sz=128" alt="ClickUp" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="ElevenLabs"><img src="https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128" alt="ElevenLabs" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Datadog"><img src="https://www.google.com/s2/favicons?domain=datadoghq.com&sz=128" alt="Datadog" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Docusign"><img src="https://www.google.com/s2/favicons?domain=docusign.com&sz=128" alt="Docusign" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Windsor.ai"><img src="https://www.google.com/s2/favicons?domain=windsor.ai&sz=128" alt="Windsor.ai" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Strava"><img src="https://www.google.com/s2/favicons?domain=strava.com&sz=128" alt="Strava" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Sentry"><img src="https://www.google.com/s2/favicons?domain=sentry.io&sz=128" alt="Sentry" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Apollo.io"><img src="https://www.google.com/s2/favicons?domain=apollo.io&sz=128" alt="Apollo.io" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Stripe"><img src="https://www.google.com/s2/favicons?domain=stripe.com&sz=128" alt="Stripe" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Lovable"><img src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=128" alt="Lovable" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Cloudflare"><img src="https://www.google.com/s2/favicons?domain=cloudflare.com&sz=128" alt="Cloudflare" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Metricool"><img src="https://www.google.com/s2/favicons?domain=metricool.com&sz=128" alt="Metricool" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Dropbox"><img src="https://www.google.com/s2/favicons?domain=dropbox.com&sz=128" alt="Dropbox" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Google BigQuery"><img src="https://www.google.com/s2/favicons?domain=cloud.google.com&sz=128" alt="Google BigQuery" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Consensus"><img src="https://www.google.com/s2/favicons?domain=consensus.app&sz=128" alt="Consensus" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Booking.com"><img src="https://www.google.com/s2/favicons?domain=booking.com&sz=128" alt="Booking.com" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Todoist"><img src="https://www.google.com/s2/favicons?domain=todoist.com&sz=128" alt="Todoist" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="HeyGen"><img src="https://www.google.com/s2/favicons?domain=heygen.com&sz=128" alt="HeyGen" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Semrush"><img src="https://www.google.com/s2/favicons?domain=semrush.com&sz=128" alt="Semrush" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Supermetrics"><img src="https://www.google.com/s2/favicons?domain=supermetrics.com&sz=128" alt="Supermetrics" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="WordPress.com"><img src="https://www.google.com/s2/favicons?domain=wordpress.com&sz=128" alt="WordPress.com" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Smartsheet"><img src="https://www.google.com/s2/favicons?domain=smartsheet.com&sz=128" alt="Smartsheet" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="ZoomInfo"><img src="https://www.google.com/s2/favicons?domain=zoominfo.com&sz=128" alt="ZoomInfo" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Firecrawl"><img src="https://www.google.com/s2/favicons?domain=firecrawl.dev&sz=128" alt="Firecrawl" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Context7"><img src="https://www.google.com/s2/favicons?domain=context7.com&sz=128" alt="Context7" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="NetSuite"><img src="https://www.google.com/s2/favicons?domain=netsuite.com&sz=128" alt="NetSuite" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Trello"><img src="https://www.google.com/s2/favicons?domain=trello.com&sz=128" alt="Trello" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Postman"><img src="https://www.google.com/s2/favicons?domain=postman.com&sz=128" alt="Postman" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="ClinicalTrials.gov"><img src="https://www.google.com/s2/favicons?domain=clinicaltrials.gov&sz=128" alt="ClinicalTrials.gov" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Ahrefs"><img src="https://www.google.com/s2/favicons?domain=ahrefs.com&sz=128" alt="Ahrefs" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Snowflake"><img src="https://www.google.com/s2/favicons?domain=snowflake.com&sz=128" alt="Snowflake" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="QuickBooks"><img src="https://www.google.com/s2/favicons?domain=quickbooks.intuit.com&sz=128" alt="QuickBooks" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Webflow"><img src="https://www.google.com/s2/favicons?domain=webflow.com&sz=128" alt="Webflow" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Plaud"><img src="https://www.google.com/s2/favicons?domain=plaud.ai&sz=128" alt="Plaud" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Expedia"><img src="https://www.google.com/s2/favicons?domain=expedia.com&sz=128" alt="Expedia" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Clay"><img src="https://www.google.com/s2/favicons?domain=clay.com&sz=128" alt="Clay" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Fireflies"><img src="https://www.google.com/s2/favicons?domain=fireflies.ai&sz=128" alt="Fireflies" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Netlify"><img src="https://www.google.com/s2/favicons?domain=netlify.com&sz=128" alt="Netlify" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="bioRxiv"><img src="https://www.google.com/s2/favicons?domain=biorxiv.org&sz=128" alt="bioRxiv" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Excalidraw"><img src="https://www.google.com/s2/favicons?domain=excalidraw.com&sz=128" alt="Excalidraw" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Make"><img src="https://www.google.com/s2/favicons?domain=make.com&sz=128" alt="Make" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="PitchBook"><img src="https://www.google.com/s2/favicons?domain=pitchbook.com&sz=128" alt="PitchBook" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Hugging Face"><img src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=128" alt="Hugging Face" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="PostHog"><img src="https://www.google.com/s2/favicons?domain=posthog.com&sz=128" alt="PostHog" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Superhuman"><img src="https://www.google.com/s2/favicons?domain=superhuman.com&sz=128" alt="Superhuman" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Exa"><img src="https://www.google.com/s2/favicons?domain=exa.ai&sz=128" alt="Exa" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="S&P Global"><img src="https://www.google.com/s2/favicons?domain=spglobal.com&sz=128" alt="S&P Global" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="n8n"><img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=128" alt="n8n" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Fathom"><img src="https://www.google.com/s2/favicons?domain=fathom.video&sz=128" alt="Fathom" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Mobbin"><img src="https://www.google.com/s2/favicons?domain=mobbin.com&sz=128" alt="Mobbin" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Interactive Brokers"><img src="https://www.google.com/s2/favicons?domain=interactivebrokers.com&sz=128" alt="Interactive Brokers" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Xero"><img src="https://www.google.com/s2/favicons?domain=xero.com&sz=128" alt="Xero" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Amplitude"><img src="https://www.google.com/s2/favicons?domain=amplitude.com&sz=128" alt="Amplitude" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="ChEMBL"><img src="https://www.google.com/s2/favicons?domain=ebi.ac.uk&sz=128" alt="ChEMBL" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Kiwi.com"><img src="https://www.google.com/s2/favicons?domain=kiwi.com&sz=128" alt="Kiwi.com" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Calendly"><img src="https://www.google.com/s2/favicons?domain=calendly.com&sz=128" alt="Calendly" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Wix"><img src="https://www.google.com/s2/favicons?domain=wix.com&sz=128" alt="Wix" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Descript"><img src="https://www.google.com/s2/favicons?domain=descript.com&sz=128" alt="Descript" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Jotform"><img src="https://www.google.com/s2/favicons?domain=jotform.com&sz=128" alt="Jotform" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Ramp"><img src="https://www.google.com/s2/favicons?domain=ramp.com&sz=128" alt="Ramp" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Klaviyo"><img src="https://www.google.com/s2/favicons?domain=klaviyo.com&sz=128" alt="Klaviyo" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Mermaid Chart"><img src="https://www.google.com/s2/favicons?domain=mermaidchart.com&sz=128" alt="Mermaid Chart" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Wiley"><img src="https://www.google.com/s2/favicons?domain=wiley.com&sz=128" alt="Wiley" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="FactSet"><img src="https://www.google.com/s2/favicons?domain=factset.com&sz=128" alt="FactSet" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Anthropic"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Anthropic" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Mixpanel"><img src="https://www.google.com/s2/favicons?domain=mixpanel.com&sz=128" alt="Mixpanel" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Mailchimp"><img src="https://www.google.com/s2/favicons?domain=mailchimp.com&sz=128" alt="Mailchimp" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Lusha"><img src="https://www.google.com/s2/favicons?domain=lusha.com&sz=128" alt="Lusha" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Elicit"><img src="https://www.google.com/s2/favicons?domain=elicit.com&sz=128" alt="Elicit" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Gong"><img src="https://www.google.com/s2/favicons?domain=gong.io&sz=128" alt="Gong" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="TikTok for Business"><img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=128" alt="TikTok for Business" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="SketchUp"><img src="https://www.google.com/s2/favicons?domain=sketchup.com&sz=128" alt="SketchUp" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="lastminute.com"><img src="https://www.google.com/s2/favicons?domain=lastminute.com&sz=128" alt="lastminute.com" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Uber"><img src="https://www.google.com/s2/favicons?domain=uber.com&sz=128" alt="Uber" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Tripadvisor"><img src="https://www.google.com/s2/favicons?domain=tripadvisor.com&sz=128" alt="Tripadvisor" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="BioRender"><img src="https://www.google.com/s2/favicons?domain=biorender.com&sz=128" alt="BioRender" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="ServiceNow"><img src="https://www.google.com/s2/favicons?domain=servicenow.com&sz=128" alt="ServiceNow" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Alpha Vantage"><img src="https://www.google.com/s2/favicons?domain=alphavantage.co&sz=128" alt="Alpha Vantage" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Scite"><img src="https://www.google.com/s2/favicons?domain=scite.ai&sz=128" alt="Scite" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Workfront"><img src="https://www.google.com/s2/favicons?domain=workfront.com&sz=128" alt="Workfront" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Harvey"><img src="https://www.google.com/s2/favicons?domain=harvey.ai&sz=128" alt="Harvey" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="ZipRecruiter"><img src="https://www.google.com/s2/favicons?domain=ziprecruiter.com&sz=128" alt="ZipRecruiter" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+<div class="logo-tile" title="Similarweb"><img src="https://www.google.com/s2/favicons?domain=similarweb.com&sz=128" alt="Similarweb" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+</div>
+</div>
+<div class="logo-more-row"><button class="btn-show-more" id="logo-more-btn" type="button">Mehr anzeigen</button></div>
+<p class="conn-more">… und noch viele mehr – fehlende Konnektoren entwickeln wir individuell für Sie.</p>
+<script>
+document.getElementById('logo-more-btn').addEventListener('click',function(){
+  var w=document.getElementById('logo-wrap');
+  w.classList.toggle('expanded');
+  this.textContent=w.classList.contains('expanded')?'Weniger anzeigen':'Mehr anzeigen';
+});
+</script>
+    </div>
+  </section>
+
+  <!-- ── 10. FAQ ── -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-inner">
+        <div class="faq-sidebar reveal">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title">Fragen,<br><em>beantwortet</em></h2>
+          <p class="section-sub">Ihre Frage ist nicht dabei? Schreiben Sie uns an vertrieb@jkb-software.com – wir antworten schnell.</p>
+          <button class="faq-toggle-all" id="faqToggleAll">
+            <span id="faqToggleIcon">+</span> Alle öffnen</button>
+        </div>
+        <div class="faq-list reveal reveal-delay-1" id="faqList">
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Was genau ist EDITH?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">EDITH ist Claude, angepasst an Ihr Unternehmen: Wir verbinden die KI per Konnektoren und individueller Entwicklung mit MS365, Ihrem ERP-System und Ihren Wissensdatenbanken – damit sie mit Ihren echten Daten arbeitet.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Wie läuft ein Projekt ab?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Wir starten mit einem unverbindlichen Gespräch und einer Analyse Ihrer Systeme. Danach richten wir Claude ein, verbinden die ersten Konnektoren und schulen Ihr Team. Die meisten Projekte sind in wenigen Wochen produktiv.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Welche Systeme können angebunden werden?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Standardmäßig u. a. Microsoft 365 (Outlook, Teams, SharePoint), gängige ERP-Systeme, DATEV, Confluence und Notion. Fehlende Anbindungen entwickeln wir individuell per Code.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Wie sicher sind unsere Daten?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Alle Daten werden verschlüsselt übertragen und DSGVO-konform verarbeitet. Zugriffe sind rollenbasiert geregelt und vollständig protokolliert. Auf Wunsch sind EU-Hosting- oder On-Premise-Optionen möglich.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Brauchen wir eigenes IT-Personal?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Nein. Wir übernehmen Einrichtung, Anbindung und laufende Betreuung komplett. Ihr Team braucht keine KI- oder Entwicklungs-Kenntnisse.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Können wir jederzeit kündigen?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Ja. Laufende Betreuungspakete sind monatlich kündbar. Einmalige Entwicklungs- und Einrichtungsleistungen rechnen wir transparent nach Aufwand ab.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 11. CTA BANNER ── -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="cta-content">
+          <div class="cta-label">✦ Jetzt starten</div>
+          <h2 class="cta-title">Bereit für Ihre<br><em>eigene Unternehmens-KI?</em></h2>
+          <p class="cta-sub">Lassen Sie uns gemeinsam herausfinden, wie Claude Ihr Unternehmen unterstützen kann – unverbindlich und persönlich.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="/contact" class="btn-cta-primary">
+            Jetzt anfragen
+            <span>→</span>
+          </a>
+          <a href="/contact" class="btn-cta-ghost">Demo vereinbaren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 12. FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">ED<span style="color:var(--accent-light)">ITH</span></a>
+          <p class="footer-brand-desc">EDITH von JKB Software: Claude, maßgeschneidert für Ihr Unternehmen – mit Konnektoren zu MS365, ERP und Ihren Wissensdatenbanken.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Twitter / X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="TikTok">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Produkt</div>
+          <div class="footer-links">
+            <a href="#features">Leistungen</a>
+            <a href="#screens">Mobile App</a>
+            
+            <a href="#integrations">Integrationen</a>
+            <a href="#">Kontakt</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Unternehmen</div>
+          <div class="footer-links">
+            <a href="#">Über uns</a>
+            <a href="#">Blog</a>
+            <a href="#">Karriere</a>
+            <a href="#">Referenzen</a>
+            <a href="#">Startseite</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Support</div>
+          <div class="footer-links">
+            <a href="#">Kontakt</a>
+            <a href="#">Über uns</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">Kontakt</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          © 2026 JKB Software. Design by <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a>
+        </div>
+        <div class="footer-legal">
+          <a href="#">Datenschutz</a>
+          <a href="#">AGB</a>
+          <a href="#">Impressum</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/edith-assets/templatemo-622-clearwave.js"></script>
 <footer style="text-align:center;padding:32px 16px;font-size:14px;opacity:.7">
 <a href="/impressum" style="color:inherit;margin:0 10px">Impressum</a>|
 <a href="/privacy-policy" style="color:inherit;margin:0 10px">Datenschutz</a>|
